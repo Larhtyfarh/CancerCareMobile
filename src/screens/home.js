@@ -18,7 +18,7 @@ export default class Home extends Component {
                     <Text style={{fontSize: RF(32),fontWeight: "700",color: lightTheme.orange,marginBottom: RF(20)}}>Tolu</Text>
                     </View>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Drawer")}>
+                    <TouchableOpacity>
                     <View style={{alignItems: "flex-end"}}>
                         <Ionicons name="md-menu" size={RF(35)} color="black" />
                     </View>  
