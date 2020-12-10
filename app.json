@@ -4,11 +4,11 @@
     "slug": "cancercare",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/images/Logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/images/Splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#D9D4F6"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "CancerCare is a mobile app to help people with Cancer keep track of their health."
   }
 }
