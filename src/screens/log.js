@@ -91,7 +91,7 @@ export default class Log extends Component {
                 <Text style={{fontSize: RF(20), fontWeight: "700", color: lightTheme.black, marginBottom: RF(15)}}>Notes</Text>
 
         
-                <View style={{height: RF(165), flexDirection: "column", alignItems: "center", justifyContent: "center", }}>
+                <View style={{height: RF(165), flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: RF(10),  }}>
 
                         <Image style={{height: RF(50), width: RF(55), marginBottom:RF(15)}} source={require('../assets/images/notes.png')}/>
                         <Text style={{fontSize: RF(20), color: lightTheme.grey,  }}>Tap here to add a note</Text>
