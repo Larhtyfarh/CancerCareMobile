@@ -77,7 +77,8 @@ export default class Home extends Component {
 
 
                     <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{marginBottom: RF(30)}}>
-
+                        
+                        <View style={{width: "100%", justifyContent: "space-between", flexDirection: "row"}}>
                         <View style={styles.vitalsContainer}>
                         
                             <Image source={require("../assets/images/heartRate.png")} style={styles.vitalsImage}/>
@@ -107,6 +108,8 @@ export default class Home extends Component {
                             <Image source={require("../assets/images/temperature.png")} style={styles.vitalsImage} resizeMode="contain"/>
                             <Text style={styles.vitalsLabel}>Temperature</Text>
                             <Text style={styles.vitalsValue}>32 <Text style={{fontSize: RF(14),fontWeight: "600"}}> C</Text></Text>
+
+                        </View>
 
                         </View>
 

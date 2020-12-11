@@ -22,7 +22,7 @@ export default class Article extends Component {
 
 
 
-
+                    <ScrollView showsVerticalScrollIndicator={false}>
 
                     <View style={{width: "100%", height: RF(50), backgroundColor: "#D9D9D9", borderRadius: RF(30), paddingHorizontal: RF(35), alignItems: "center", flexDirection: "row", marginBottom:RF(20) }}>
 
@@ -173,7 +173,8 @@ export default class Article extends Component {
 
 
 
-        
+                <View style={{paddingBottom: RF(10)}} />
+            </ScrollView>
 
             </View>
             

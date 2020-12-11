@@ -120,6 +120,9 @@ export default class Calendar extends Component {
                     </View>
 
 
+            <ScrollView showsVerticalScrollIndicator={false}>
+
+
             <View style={{height: RF(80), marginBottom: RF(40)}}>
             <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{ }}>
                     
@@ -455,7 +458,10 @@ export default class Calendar extends Component {
                     </View>
 
                     </View>
-                    </View>
+
+                    <View style={{paddingBottom: RF(10)}} />
+            </ScrollView>  
+            </View>
               
 
 

@@ -18,6 +18,7 @@ export default class Log extends Component {
 
                 </View>
 
+                <ScrollView showsVerticalScrollIndicator={false}>
 
                 <Text style={{fontSize: RF(20), fontWeight: "700", color: lightTheme.black, marginBottom: RF(5)}}>Mood</Text>
                 
@@ -103,7 +104,8 @@ export default class Log extends Component {
 
                 </View>
 
-                
+                <View style={{paddingBottom: RF(10)}} />
+            </ScrollView>  
 
 
                 

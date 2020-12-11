@@ -43,11 +43,11 @@ export default class Report extends Component {
 
                 </View>
 
-                <View style={{width: "100%",height: RF(240),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
+                <View style={{width: "100%",height: RF(260),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center"}}>
+                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between", }}>
                             <Image style={{width: RF(44), height: RF(40), }} source={require('../assets/images/heartRate.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Heart Rate</Text>
@@ -78,7 +78,7 @@ export default class Report extends Component {
 
                         </View>
 
-                        <View style={{flexDirection: "row", paddingHorizontal: RF(60)}}>
+                        <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between", }}>
 
                             <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
@@ -99,11 +99,11 @@ export default class Report extends Component {
                 </View>
 
 
-                <View style={{width: "100%",height: RF(240),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
+                <View style={{width: "100%",height: RF(260),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center"}}>
+                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}>
                             <Image style={{width: RF(44), height: RF(40), }} source={require('../assets/images/weight.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Weight</Text>
@@ -134,7 +134,7 @@ export default class Report extends Component {
 
                         </View>
 
-                        <View style={{flexDirection: "row", paddingHorizontal: RF(60)}}>
+                        <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between",}}>
 
                             <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
@@ -154,11 +154,11 @@ export default class Report extends Component {
 
                 </View>
 
-                <View style={{width: "100%",height: RF(240),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
+                <View style={{width: "100%",height: RF(260),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center"}}>
+                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}>
                             <Image style={{width: RF(23), height: RF(40), }} source={require('../assets/images/bloodSugar.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Blood Sugar</Text>
@@ -189,7 +189,7 @@ export default class Report extends Component {
 
                         </View>
 
-                        <View style={{flexDirection: "row", paddingHorizontal: RF(60)}}>
+                        <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between",}}>
 
                             <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
@@ -210,11 +210,11 @@ export default class Report extends Component {
                 </View>
 
 
-                <View style={{width: "100%",height: RF(240),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
+                <View style={{width: "100%",height: RF(260),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center"}}>
+                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}>
                             <Image style={{width: RF(17), height: RF(40), }} source={require('../assets/images/temperature.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Temperature</Text>
@@ -245,7 +245,7 @@ export default class Report extends Component {
 
                         </View>
 
-                        <View style={{flexDirection: "row", paddingHorizontal: RF(60)}}>
+                        <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between",}}>
 
                             <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
