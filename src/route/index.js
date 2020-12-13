@@ -113,6 +113,7 @@ export const Stack = () => {
                 <Routes.Screen name="AddSymptoms" component={SCREENS.AddSymptoms} options={{ headerShown: false }}/>
                 <Routes.Screen name="AddVitals" component={SCREENS.AddVitals} options={{ headerShown: false }}/>
                 <Routes.Screen name="Scan" component={SCREENS.Scan} options={{ headerShown: false }}/>
+                <Routes.Screen name="ArticleView" component={SCREENS.ArticleView} options={{ headerShown: false }}/>
                 <Routes.Screen name="Drawer" component={Drawer} options={{headerShown: false}}/>
                 
             </Routes.Navigator>

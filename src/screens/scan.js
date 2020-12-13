@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect  } from 'react'
 import { Text, View, StyleSheet, Image, ScrollView, TouchableOpacity,  } from 'react-native'
 import { mainStyle } from '../styles/main';
 import Camera from 'react-native-camera';
+import { BarCodeScanner } from 'expo-barcode-scanner';
 import { Ionicons } from '@expo/vector-icons';
 import { Icons } from 'react-native-vector-icons';
 import { lightTheme } from "../styles/colors";
@@ -18,9 +19,14 @@ export default class scan extends Component {
         this.props.navigation.goBack(null);
         return true;
     }
+    
+
+
 
 
     render() {
+
+
         return (
             <View style={mainStyle.container}>
 
@@ -44,8 +50,9 @@ export default class scan extends Component {
                 <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(65), alignSelf: "center", }}>Scan barcode of the medicine</Text>
 
                 <View style={{marginBottom: RF(60), justifyContent: "center", alignItems: "center", }}>
-                    <Image  style={{height: RF(390), width: RF(255), }} source={require('../assets/images/barcode.png')}/>
                     
+                    <BarCodeScanner style={{height: RF(380), width: RF(245), }}/>
+      
                 </View>
 
                 <TouchableOpacity>
@@ -60,6 +67,8 @@ export default class scan extends Component {
         )
     }
 }
+
+//<Image  style={{height: RF(390), width: RF(255), }} source={require('../assets/images/barcode.png')}/>
 
 
 

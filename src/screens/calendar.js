@@ -128,15 +128,15 @@ export default class Calendar extends Component {
                     
                     <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                     
-                    <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
-                    
-                    <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>15</Text>
+                        <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
+                        
+                        <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>15</Text>
                     </View>
                     <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                     
-                    <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>M</Text>
-                    
-                    <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>16</Text>
+                        <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>M</Text>
+                        
+                        <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>16</Text>
                     </View>
                     <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                     

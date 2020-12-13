@@ -13,6 +13,7 @@ import AddAppointment from "./addAppointment";
 import AddSymptoms from "./addSymptoms";
 import AddVitals from "./addVitals";
 import Scan from "./scan";
+import ArticleView from "./articleView";
 
 export { Home,Calendar,Log,Report,Article,CalendarAll, AllNote, AllAppointment, AllMedication, NoteView, 
-            AddAppointment, AddMedication, AddSymptoms, AddVitals, Scan,  }
+            AddAppointment, AddMedication, AddSymptoms, AddVitals, Scan, ArticleView,  }
