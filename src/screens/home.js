@@ -7,10 +7,11 @@ import RF from "../utils/RF";
 
 
 export default class Home extends Component {
+    
     render() {
         return (
+            
             <View style={mainStyle.container}>
-                
                 <View style={styles.header}>
 
                     <View>
@@ -18,7 +19,7 @@ export default class Home extends Component {
                     <Text style={{fontSize: RF(32),fontWeight: "700",color: lightTheme.orange,marginBottom: RF(20)}}>Tolu</Text>
                     </View>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>this.props.navigation.openDrawer()}>
                     <View style={{alignItems: "flex-end"}}>
                         <Ionicons name="md-menu" size={RF(35)} color="black" />
                     </View>  
@@ -163,6 +164,7 @@ export default class Home extends Component {
                     <View style={{paddingBottom: RF(10)}} />
                 </ScrollView>
             </View>
+            
         )
     }
 }
@@ -211,6 +213,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         marginBottom: RF(30),
+        zIndex: 20
     },
 
     appointmentCard: {

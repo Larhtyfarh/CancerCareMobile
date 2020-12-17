@@ -7,115 +7,9 @@ import RF from "../utils/RF";
 
 export default class CalendarAll extends Component {
 
-    state = {
-        modalVisible: false
-      };
-    
-      setModalVisible = (visible) => {
-        this.setState({ modalVisible: visible });
-      }
-
     render() {
 
-        const { modalVisible } = this.state;
-
         return ( 
-
-            <View style={mainStyle.container}>
-
-
-                <Modal animationType="slide" transparent={true} visible={modalVisible} onRequestClose={() => {Alert.alert("Popup closed."); }}>
-
-                <View style={styles.modalView}>
-
-                    <View style={{width: "100%", marginTop: RF(25), marginBottom: RF(25), alignContent: "center", justifyContent: "space-between", flexDirection: "row-reverse", }}>
-                        
-                        <View style={{paddingRight: RF(25), }}>
-                            <TouchableOpacity onPress={() => {this.setModalVisible(!modalVisible);}}>
-                                <Ionicons name="md-close" size={RF(30)} color="#FA4A0C" />
-                            </TouchableOpacity>
-                        </View>
-                        
-                        <Text style={{fontSize: RF(22), fontWeight: "600", textAlign: "center", flex: 1, }}>Add New</Text>
-
-                    </View>
-
-
-                    <View style={{width: "100%",flexDirection: "row", justifyContent: "space-evenly",  marginBottom: RF(20), }}>
-
-                        <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddMedication"); this.setModalVisible(!modalVisible); }}>
-                        <View style={{width: RF(80), height: RF(110), alignItems: "center",backgroundColor: lightTheme.white,borderRadius: RF(10), paddingTop: RF(20),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65, }}>
-
-                            <Image style={{width: RF(40), height: RF(40), marginBottom: RF(20), }} source={require('../assets/images/tabletBlue.png')}/>
-                            <Text style={{fontSize: RF(15), fontWeight: "700", color: lightTheme.orange, }}>Medication</Text>
-
-                        </View>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddAppointment"); this.setModalVisible(!modalVisible); }}>
-                        <View style={{width: RF(80), height: RF(110), alignItems: "center",backgroundColor: lightTheme.white,borderRadius: RF(10), paddingTop: RF(20),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65, }}>
-
-                            <Image style={{width: RF(40), height: RF(40), marginBottom: RF(20), }} source={require('../assets/images/appointment.png')}/>
-                            <Text style={{fontSize: RF(15), fontWeight: "700", color: lightTheme.orange, }}>Appointment</Text>
-
-                        </View>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddSymptoms"); this.setModalVisible(!modalVisible); }}>
-                        <View style={{width: RF(80), height: RF(110), alignItems: "center",backgroundColor: lightTheme.white,borderRadius: RF(10), paddingTop: RF(20),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65, }}>
-
-                            <Image style={{width: RF(37), height: RF(40), marginBottom: RF(20), }} source={require('../assets/images/symptoms.png')}/>
-                            <Text style={{fontSize: RF(15), fontWeight: "700", color: lightTheme.orange, }}>Symptoms</Text>
-
-                        </View>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddVitals"), this.setModalVisible(!modalVisible); }}>
-                        <View style={{width: RF(80), height: RF(110), alignItems: "center",backgroundColor: lightTheme.white,borderRadius: RF(10), paddingTop: RF(20),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65, }}>
-
-                            <Image style={{width: RF(44), height: RF(40), marginBottom: RF(20), }} source={require('../assets/images/heartRate.png')}/>
-                            <Text style={{fontSize: RF(15), fontWeight: "700", color: lightTheme.orange, }}>Vitals</Text>
-
-                        </View>
-                        </TouchableOpacity>
-
-                    </View>
-
-
-                </View>
-                </Modal>
-
-
-
-
-
-                <View style={{width: "100%",flexDirection: "row-reverse",justifyContent: "space-between",marginBottom: RF(30), alignItems: "center"}}>
-
-                    <TouchableOpacity onPress={() => { this.setModalVisible(true);}}>
-                    <View>
-                        <Ionicons name="md-add" size={RF(35)} color="#FA4A0C" />
-                    </View> 
-                    </TouchableOpacity>
-
-                    <Text style={{fontSize: RF(22),fontWeight: "700",color: lightTheme.orange, flex:1, textAlign: "center" }}>Calendar</Text>
- 
-                </View>
-
-                <View style={{width: "100%",flexDirection: "row",alignItems: "center",justifyContent: "center",marginBottom: RF(25), justifyContent: "space-evenly"}}>
-
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Calendar")}>
-
-                        <Text style={{fontSize: RF(20), color: lightTheme.grey}}>Daily</Text>
-
-                    </TouchableOpacity>
-
-                    <View style={{flexDirection: "column",borderBottomColor: lightTheme.orange, borderBottomWidth: RF(3)}}>
-
-                        <Text style={{fontSize: RF(20), color: lightTheme.orange, fontWeight: "600",}}>All</Text>
-
-                    </View>
-                   
-                </View>
 
                 <ScrollView showsVerticalScrollIndicator={false}>
 
@@ -386,14 +280,6 @@ export default class CalendarAll extends Component {
                     <View style={{paddingBottom: RF(30)}} />
 
                 </ScrollView>
-
-
-
-                
-
-                    
-
-            </View>
         )
 
     }

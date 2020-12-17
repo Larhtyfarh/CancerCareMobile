@@ -7,6 +7,15 @@ import RF from "../utils/RF";
 
 export default class allMedication extends Component {
 
+    constructor(props) {
+        super(props);
+        this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+    }
+    handleBackButtonClick() {
+        this.props.navigation.goBack(null);
+        return true;
+    }
+
     render() {
         return (
 
@@ -15,7 +24,7 @@ export default class allMedication extends Component {
                 <View style={{width: "100%",flexDirection: "row",justifyContent: "space-between",marginBottom: RF(30), alignItems: "center"}}>
 
                     <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("CalendarAll")}>
+                        <TouchableOpacity onPress={this.handleBackButtonClick}>
 
                             <Image style={{ height: RF(30), width: RF(30), }} source={require('../assets/icons/actions/back.png')}/>
 

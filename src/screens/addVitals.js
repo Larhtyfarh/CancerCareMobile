@@ -42,7 +42,7 @@ export default class addVitals extends Component {
                     <View style={{flexDirection: "row", justifyContent: "space-between", marginBottom: RF(25)}}>
 
                         <TouchableOpacity>
-                                <View style={styles.vitalsContainer}>
+                                <View style={styles.vitalsContainerSelected}>
                             
                                     <Image source={require("../assets/images/heartRate.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Heart Rate</Text>
@@ -51,7 +51,7 @@ export default class addVitals extends Component {
                             </TouchableOpacity>
 
                             <TouchableOpacity>
-                                <View style={styles.vitalsContainer}>
+                                <View style={styles.vitalsContainerSelected}>
                             
                                     <Image source={require("../assets/images/weight.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Weight</Text>
@@ -60,7 +60,7 @@ export default class addVitals extends Component {
                             </TouchableOpacity>
 
                             <TouchableOpacity>
-                                <View style={styles.vitalsContainer}>
+                                <View style={styles.vitalsContainerSelected}>
                             
                                     <Image source={require("../assets/images/bloodSugar.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Blood Sugar</Text>
@@ -73,7 +73,7 @@ export default class addVitals extends Component {
                     <View style={{flexDirection: "row", justifyContent: "space-between", marginBottom: RF(280), }}>
 
                         <TouchableOpacity>
-                                <View style={styles.vitalsContainer}>
+                                <View style={styles.vitalsContainerSelected}>
                             
                                     <Image source={require("../assets/images/temperature.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Temperature</Text>
@@ -105,7 +105,7 @@ export default class addVitals extends Component {
 
                     <View style={{backgroundColor: lightTheme.orange, height: RF(50), width: RF(250), borderRadius: RF(10), justifyContent: "center", alignSelf: "center" }}>
 
-                    <Button title="SAVE CHANGES" color= "#F2f2f2" />
+                    <Button title="SAVE CHANGES" color= "#F2f2f2" onPress={() => this.props.navigation.navigate("Home")}/>
 
                     </View>
 
@@ -143,7 +143,17 @@ const styles = StyleSheet.create({
         textAlign: "center",
      }, 
 
-     vitalsContainer: {
+     vitalsContainerSelected: {
+        width: RF(95),
+        height: RF(120),
+        backgroundColor: lightTheme.peach,
+        borderRadius: RF(20),
+        paddingHorizontal: RF(5),
+        paddingVertical: RF(10),
+        alignItems: "center",
+    },
+
+    vitalsContainer: {
         width: RF(95),
         height: RF(120),
         backgroundColor: lightTheme.white,

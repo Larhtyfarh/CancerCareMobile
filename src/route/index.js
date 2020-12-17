@@ -3,14 +3,13 @@ import { Image, View, Text,  } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator,DrawerContentScrollView } from "@react-navigation/drawer";
 import * as SCREENS from "../screens";
 import RF from "../utils/RF";
-const Routes = createStackNavigator();
+import { TouchableOpacity } from "react-native-gesture-handler";
+const Routes = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
-const DrawerNavigator = createDrawerNavigator();
-
-
+// const DrawerNavigator = createDrawerNavigator();
 
 
 
@@ -83,25 +82,55 @@ const Dashboard = () => {
     )
 }
 
-const Drawer = () => {
+const Drawer = (props) => {
     return(
+        <DrawerContentScrollView {...props}>
 
-        <DrawerNavigator.Navigator>
-            
-            
-            <DrawerNavigator.Screen name="Home" component={SCREENS.Home}/>
-            <DrawerNavigator.Screen name="Calendar" component={SCREENS.Calendar}/>
+            <View style={{flexDirection: "row", marginTop: RF(100), paddingHorizontal: RF(25), alignItems: "center", marginBottom: RF(40), }}>
+                <Image style={{width: RF(50), height: RF(50), }} source={require('../assets/images/ToluPeters.png')}/>
+                <Text style={{fontSize: RF(30), fontWeight: "700", paddingHorizontal: RF(20), }}>Tolu Peters</Text>
+            </View>
 
+        <TouchableOpacity>
 
-        </DrawerNavigator.Navigator>
+            <View style={{flexDirection: "row",paddingHorizontal: RF(80), alignItems: "center", marginBottom: RF(30), }}>
+                <Image style={{width: RF(20), height: RF(20), }} source={require('../assets/icons/actions/profile.png')}/>
+                <Text style={{fontSize: RF(25),paddingHorizontal: RF(20), }}>Profile</Text>
+            </View>
+        
+        </TouchableOpacity>
 
+        <TouchableOpacity>
+
+            <View style={{flexDirection: "row",paddingHorizontal: RF(80), alignItems: "center", marginBottom: RF(30), }}>
+                <Image style={{width: RF(20), height: RF(20), }} source={require('../assets/icons/actions/settings.png')}/>
+                <Text style={{fontSize: RF(25),paddingHorizontal: RF(20), }}>Settings</Text>
+
+            </View>
+        
+        </TouchableOpacity>
+
+        <View style={{flexDirection: "row",paddingHorizontal: RF(70), alignItems: "center", marginBottom: RF(30),  }}>
+            <Image style={{width: RF(40), height: RF(40), }} source={require('../assets/icons/actions/lightMode.png')}/>
+            <TouchableOpacity>
+
+                <Image style={{width: RF(90), height: RF(37), }} source={require('../assets/icons/actions/selector.png')}/>
+
+            </TouchableOpacity>
+            <Image style={{width: RF(20), height: RF(20),}} source={require('../assets/icons/actions/darkMode.png')}/>
+        </View>
+
+        </DrawerContentScrollView>
     )
 }
 
 export const Stack = () => {
     return (
         <NavigationContainer>
-            <Routes.Navigator>
+            <Routes.Navigator
+                drawerContent={(props) => <Drawer {...props} />}
+                // drawerPosition="right"
+            >
                 <Routes.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
                 <Routes.Screen name="CalendarAll" component={SCREENS.CalendarAll } options={{ headerShown: false }}/>
                 <Routes.Screen name="AllNote" component={SCREENS.AllNote} options={{ headerShown: false }}/>
@@ -114,8 +143,7 @@ export const Stack = () => {
                 <Routes.Screen name="AddVitals" component={SCREENS.AddVitals} options={{ headerShown: false }}/>
                 <Routes.Screen name="Scan" component={SCREENS.Scan} options={{ headerShown: false }}/>
                 <Routes.Screen name="ArticleView" component={SCREENS.ArticleView} options={{ headerShown: false }}/>
-                <Routes.Screen name="Drawer" component={Drawer} options={{headerShown: false}}/>
-                
+                <Routes.Screen name="Drawer" component={Drawer} options={{headerShown: false}}/>   
             </Routes.Navigator>
         </NavigationContainer>
     )

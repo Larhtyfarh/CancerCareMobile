@@ -8,7 +8,23 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 
 export default class Article extends Component {
+
+    state = {
+        modalVisible: false,
+        tab: 1
+    };
+    
+    setModalVisible = (visible) => {
+        this.setState({ modalVisible: visible });
+    }
+    
+    onToggleTab = n => {
+        this.setState({ tab: n })
+    }
+
     render() {
+
+        const { modalVisible,tab } = this.state;
 
         return (
 
@@ -19,6 +35,7 @@ export default class Article extends Component {
                     <Text style={{fontSize: RF(22),fontWeight: "700",color: lightTheme.orange, flex:1, textAlign: "center" }}>Articles</Text>
 
                 </View>
+
 
                 <ScrollView showsVerticalScrollIndicator={false}>
 
@@ -33,50 +50,56 @@ export default class Article extends Component {
 
                     <View style={{marginBottom: RF(30)}}>
 
-                        <ScrollView showsHorizontalScrollIndicator={false} horizontal >
+                    
+                    
+                    <ScrollView showsHorizontalScrollIndicator={false} horizontal >
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onToggleTab(1)}>
 
-                                <View style={{height: RF(40), backgroundColor: lightTheme.peach, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row",marginRight: RF(10)}}>
+                                <View style={tab === 1 ? {height: RF(40), backgroundColor: lightTheme.peach, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row",marginRight: RF(10)}
+                                : {height: RF(40), backgroundColor: lightTheme.white, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row",marginRight: RF(10)}}>
 
-                                    <Image style={{width: RF(14), height: RF(15) }} source={require('../assets/icons/actions/map.png')}/> 
-                                    <Text style={{fontSize: RF(18), fontWeight: "600", color: lightTheme.orange, paddingHorizontal: RF(5)}}> Discover</Text>
+                                <Image style={{width: RF(14), height: RF(15) }} source={tab === 1 ? require('../assets/icons/actions/map.png') : require('../assets/icons/actions/clock.png')}/> 
+                                    <Text style={tab === 1 ? {fontSize: RF(18), fontWeight: "600", color: lightTheme.orange, paddingHorizontal: RF(5)} : {fontSize: RF(18), paddingHorizontal: RF(5),}}> Discover</Text>
 
                                 </View>
 
                             </TouchableOpacity>
 
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onToggleTab(2)}>
 
-                                <View style={{height: RF(40), backgroundColor: lightTheme.white, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}}>
+                                <View style={tab === 2 ? {height: RF(40), backgroundColor: lightTheme.peach, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}
+                                : {height: RF(40), backgroundColor: lightTheme.white, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}}>
 
                                     <Image style={{width: RF(15), height: RF(15) }} source={require('../assets/icons/actions/clock.png')}/>
-                                    <Text style={{fontSize: RF(18), paddingHorizontal: RF(5)}}> Recents</Text>
+                                    <Text style={tab === 2 ? {fontSize: RF(18), fontWeight: "600", color: lightTheme.orange, paddingHorizontal: RF(5)} : {fontSize: RF(18), paddingHorizontal: RF(5)}}> Recents</Text>
 
                                 </View>
 
                             </TouchableOpacity>
 
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onToggleTab(3)}>
 
-                                <View style={{height: RF(40), backgroundColor: lightTheme.white, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}}>
+                                <View style={ tab === 3 ? {height: RF(40), backgroundColor: lightTheme.peach, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}
+                                : {height: RF(40), backgroundColor: lightTheme.white, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}}>
 
                                     <Image style={{width: RF(17), height: RF(15) }} source={require('../assets/icons/actions/heart.png')}/>
-                                    <Text style={{fontSize: RF(18), paddingHorizontal: RF(5)}}> Favorites</Text>
+                                    <Text style={tab === 3 ? {fontSize: RF(18), fontWeight: "600", color: lightTheme.orange, paddingHorizontal: RF(5)} : {fontSize: RF(18), paddingHorizontal: RF(5)}}> Favorites</Text>
 
                                 </View>
 
                             </TouchableOpacity>
 
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onToggleTab(4)}>
 
-                                <View style={{height: RF(40), backgroundColor: lightTheme.white, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}}>
+                                <View style={tab === 4 ? {height: RF(40), backgroundColor: lightTheme.peach, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}
+                                : {height: RF(40), backgroundColor: lightTheme.white, borderRadius: RF(30), paddingHorizontal: RF(10), alignItems: "center", flexDirection: "row", marginRight: RF(10), elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,}}>
 
                                     <Image style={{width: RF(13), height: RF(15) }} source={require('../assets/icons/actions/save.png')}/>
-                                    <Text style={{fontSize: RF(18), paddingHorizontal: RF(5)}}> Saved</Text>
+                                    <Text style={tab === 4 ? {fontSize: RF(18), fontWeight: "600", color: lightTheme.orange, paddingHorizontal: RF(5)} : {fontSize: RF(18), paddingHorizontal: RF(5)}}> Saved</Text>
 
                                 </View>
 
@@ -86,7 +109,9 @@ export default class Article extends Component {
 
                     </View>
 
-
+                    
+                {tab === 1 ? 
+                    <View>
                     <Text style={{fontSize: RF(20), fontWeight: "700", color: lightTheme.orange, marginBottom: RF(15)}}>Top Articles</Text>
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("ArticleView")}>
@@ -100,7 +125,7 @@ export default class Article extends Component {
 
                             </View>
 
-                            <View style={{marginTop: RF(25), marginLeft: RF(80)}}>
+                            <View style={{flex: 1, marginTop: RF(25), alignItems: "flex-end",}}>
                                 <Image style={{height: RF(120), width: RF(115), }} source={require('../assets/images/newDiscovery.png')}/>
                             </View>
 
@@ -119,7 +144,7 @@ export default class Article extends Component {
 
                                 <View style={{ height: RF(120), backgroundColor: "#DBCED1",borderRadius: RF(20), flexDirection: "row" , paddingHorizontal: RF(15), marginBottom: RF(20)}}>
 
-                                    <View style={{flexDirection: "column",  }}>
+                                    <View style={{flex:1, flexDirection: "column",  }}>
 
                                         <Image style={{height: RF(60), width: RF(56), marginTop: RF(10), alignSelf: "flex-end"}} source={require('../assets/images/breakThrough.png')}/>
                                     
@@ -139,7 +164,7 @@ export default class Article extends Component {
 
                                 <View style={{height: RF(120), backgroundColor: "#EDD3BE", borderRadius: RF(20), flexDirection: "row" , paddingHorizontal: RF(15), marginBottom: RF(20)}}>
 
-                                    <View style={{flexDirection: "column", }}>
+                                    <View style={{flex:1, flexDirection: "column", }}>
 
                                         <Image style={{height: RF(60), width: RF(56), marginTop: RF(10), alignSelf: "flex-end"}} source={require('../assets/images/drugTest.png')}/>
                                     
@@ -163,7 +188,7 @@ export default class Article extends Component {
 
                                 <View style={{ height: RF(120), backgroundColor: "#D3E2DF", borderRadius: RF(20), flexDirection: "row" , paddingHorizontal: RF(15), marginBottom: RF(20)}}>
 
-                                    <View style={{flexDirection: "column",  }}>
+                                    <View style={{flex:1, flexDirection: "column",  }}>
 
                                         <Image style={{height: RF(60), width: RF(56), marginTop: RF(10),alignSelf: "flex-end" }} source={require('../assets/images/researchWork.png')}/>
                                 
@@ -184,7 +209,7 @@ export default class Article extends Component {
 
                                 <View style={{height: RF(120), backgroundColor: "#EEBFCC", borderRadius: RF(20), flexDirection: "row" , paddingHorizontal: RF(15), marginBottom: RF(20)}}>
 
-                                    <View style={{flexDirection: "column", }}>
+                                    <View style={{flex:1, flexDirection: "column", }}>
 
                                         <Image style={{height: RF(60), width: RF(56), marginTop: RF(10), alignSelf: "flex-end"}} source={require('../assets/images/whatToDo.png')}/>
                                 
@@ -204,11 +229,57 @@ export default class Article extends Component {
 
                     </View>
 
+                </View> : null }
+                
+                {tab === 2 ? 
+            
+                <View>
+
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("ArticleView")}>
+
+                            <View style={{width: "100%", height: RF(120), backgroundColor: "#E2D2E8", alignContent: "center", borderRadius: RF(20), flexDirection: "row" , paddingHorizontal: RF(15), marginBottom: RF(20)}}>
+
+                                <View style={{}}>
+
+                                    <Text style={{fontSize: RF(30), fontWeight: "700",marginTop: RF(15), marginBottom: RF(5)}}>New</Text>
+                                    <Text style={{fontSize: RF(30), fontWeight: "700"}}>Discovery</Text>
+
+                                </View>
+
+                                <View style={{flex: 1, marginTop: RF(25), alignItems: "flex-end", }}>
+                                    <Image style={{height: RF(60), width: RF(58), }} source={require('../assets/images/newDiscovery.png')}/>
+                                </View>
+
+                            </View>
+
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ArticleView")}>
+
+                            <View style={{width: "100%", height: RF(120), backgroundColor: "#DBCED1", alignContent: "center", borderRadius: RF(20), flexDirection: "row" , paddingHorizontal: RF(15), marginBottom: RF(20)}}>
+
+                                <View style={{}}>
+
+                                    <Text style={{fontSize: RF(30), fontWeight: "700",marginTop: RF(15), marginBottom: RF(5)}}>Break</Text>
+                                    <Text style={{fontSize: RF(30), fontWeight: "700"}}>Through</Text>
+
+                                </View>
+
+                                <View style={{flex: 1, marginTop: RF(25), alignItems: "flex-end", }}>
+                                    <Image style={{height: RF(60), width: RF(58), }} source={require('../assets/images/breakThrough.png')}/>
+                                </View>
+
+                            </View>
+
+                        </TouchableOpacity>
+
+
+                            
+                </View> : null } 
 
 
                 <View style={{paddingBottom: RF(10)}} />
-            </ScrollView>
-
+            </ScrollView> 
             </View>
             
         )

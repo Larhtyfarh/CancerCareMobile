@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Button, Image, AppRegistry, TouchableOpacity, ScrollView,  } from 'react-native'
+import { Text, View, StyleSheet, Button, Image, KeyboardAvoidingView, TouchableOpacity, ScrollView, TextInput,Platform  } from 'react-native'
 import { mainStyle } from '../styles/main';
 import {Camera} from 'expo-camera'
 import { Ionicons } from '@expo/vector-icons';
 import { Icons } from 'react-native-vector-icons';
 import { lightTheme } from "../styles/colors";
 import RF from "../utils/RF";
+import Message from '../components/message';
 
 export default class addAppointment extends Component {
 
@@ -18,9 +19,26 @@ export default class addAppointment extends Component {
         return true;
     }
 
+    state = {
+        message: false
+    }
+    showMessage = () => {
+        this.setState({ message: true },() => {
+            setTimeout(()=>{
+                this.setState({ message: false },()=>{
+                    this.props.navigation.navigate("AllAppointment")
+                })
+            },1000)
+        })  
+    }
+    hideMessage = () => {
+        this.setState({ message: false }) 
+    }
+
 
     render() {
         return (
+            <>
             <View style={mainStyle.container}>
 
                 <View style={styles.header}>
@@ -38,16 +56,25 @@ export default class addAppointment extends Component {
  
                 </View>
 
+                <KeyboardAvoidingView
+                    behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+                    style={{flex: 1}}
+                >
+
                 <ScrollView showsVerticalScrollIndicator={false}>
 
-                <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(20), }}>Title</Text>
-                <View style={{borderBottomWidth: RF(1), marginBottom: RF(20),}}>
-                        <Text style={{fontSize: RF(18), color: lightTheme.grey, marginBottom: RF(5), }}>Type Appointment name</Text>
+                <Text style={{fontSize: RF(20), fontWeight: "500", }}>Title</Text>
+                <View style={{width: "90%",height: RF(50),alignItems: "center", flexDirection: "row", marginBottom:RF(20), borderBottomWidth: RF(2), }}>
+
+                        <TextInput style={{width: RF(350), height: RF(50), fontSize: RF(18), color: lightTheme.grey,borderColor: "#f2f2f2", borderWidth: 1 }} clearButtonMode="while-editing" placeholder="Type Apoointment name" />
+
                 </View>
 
-                <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(20),}}>Caregiver</Text>
-                <View style={{borderBottomWidth: RF(1), marginBottom: RF(20), }}>
-                        <Text style={{fontSize: RF(18), color: lightTheme.grey, marginBottom: RF(5), }}>Type Caregiver name or select</Text>
+                <Text style={{fontSize: RF(20), fontWeight: "500", }}>Caregiver</Text>
+                <View style={{width: "90%",height: RF(50),alignItems: "center", flexDirection: "row", marginBottom:RF(20), borderBottomWidth: RF(2), }}>
+
+                        <TextInput style={{width: RF(350), height: RF(50), fontSize: RF(18), color: lightTheme.grey,borderColor: "#f2f2f2", borderWidth: 1 }} clearButtonMode="while-editing" placeholder="Type Caregiver name or select" />
+
                 </View>
 
                 <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(20),}}>Select Date</Text>
@@ -412,9 +439,11 @@ export default class addAppointment extends Component {
 
                 </ScrollView>
 
-                <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(20), }}>Location</Text>
-                <View style={{borderBottomWidth: RF(1), marginBottom: RF(20),}}>
-                        <Text style={{fontSize: RF(18), color: lightTheme.grey, marginBottom: RF(5), }}>Type Appointment location</Text>
+                <Text style={{fontSize: RF(20), fontWeight: "500", }}>Location</Text>
+                <View style={{width: "90%", height: RF(50),alignItems: "center", flexDirection: "row", marginBottom:RF(20), borderBottomWidth: RF(2), }}>
+
+                        <TextInput style={{width: RF(350), height: RF(50), fontSize: RF(18), color: lightTheme.grey,borderColor: "#f2f2f2", borderWidth: 1 }} clearButtonMode="while-editing" placeholder="Type Appointment location" />
+
                 </View>
 
                 <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(20),}}>Notes</Text>
@@ -422,13 +451,13 @@ export default class addAppointment extends Component {
                 <View style={{height: RF(165), flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: RF(10),  }}>
 
                         <Image style={{height: RF(50), width: RF(55), marginBottom:RF(15)}} source={require('../assets/images/notes.png')}/>
-                        <Text style={{fontSize: RF(20), color: lightTheme.grey,  }}>Tap here to add a note</Text>
+                        <TextInput style={{fontSize: RF(20), color: lightTheme.grey, borderColor: "#f2f2f2", borderWidth: 1, }} clearButtonMode="while-editing" placeholder="Tap here to add a note" />
 
                 </View>
 
                 <View style={{backgroundColor: lightTheme.orange, height: RF(50), width: RF(250), borderRadius: RF(10), justifyContent: "center", alignSelf: "center" }}>
 
-                    <Button title="ADD APPOINTMENT" color= "#F2f2f2" />
+                    <Button title="ADD APPOINTMENT" color= "#F2f2f2" onPress={() => this.showMessage()}/>
 
                 </View>
 
@@ -436,7 +465,15 @@ export default class addAppointment extends Component {
 
             </ScrollView>
 
+            </KeyboardAvoidingView>
+
             </View>
+
+            <Message 
+                modalVisible={this.state.message}
+                message="Saved"
+            />
+            </>
         )
     }
 }

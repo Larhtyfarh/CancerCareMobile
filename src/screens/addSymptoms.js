@@ -47,7 +47,7 @@ export default class addSymptoms extends Component {
                 <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{marginBottom: RF(30)}}>
                         
                         <TouchableOpacity>
-                            <View style={styles.vitalsContainer}>
+                            <View style={styles.vitalsContainerSelected}>
                         
                                 <Image source={require("../assets/images/mostCommon.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                 <Text style={styles.vitalsLabel}>Most</Text>
@@ -236,7 +236,7 @@ export default class addSymptoms extends Component {
 
                 <View style={{backgroundColor: lightTheme.orange, height: RF(50), width: RF(250), borderRadius: RF(10), justifyContent: "center", alignSelf: "center" }}>
 
-                    <Button title="SAVE CHANGES" color= "#F2f2f2" />
+                    <Button title="SAVE CHANGES" color= "#F2f2f2" onPress={() => this.props.navigation.navigate("Home")}/>
 
                 </View>
                 
@@ -278,6 +278,17 @@ const styles = StyleSheet.create({
         width: RF(95),
         height: RF(120),
         backgroundColor: lightTheme.white,
+        borderRadius: RF(20),
+        paddingHorizontal: RF(5),
+        paddingVertical: RF(20),
+        alignItems: "center",
+        marginRight: RF(10),
+    },
+
+    vitalsContainerSelected: {
+        width: RF(95),
+        height: RF(120),
+        backgroundColor: lightTheme.peach,
         borderRadius: RF(20),
         paddingHorizontal: RF(5),
         paddingVertical: RF(20),

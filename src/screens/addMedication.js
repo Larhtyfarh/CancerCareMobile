@@ -1,25 +1,31 @@
-import React, { Component } from 'react'
-import { Text, View, StyleSheet, Button, Image, AppRegistry, TouchableOpacity, ScrollView, } from 'react-native'
+import React, { Component, useState } from 'react'
+import { Text, View, StyleSheet, Button, Image, AppRegistry, TouchableOpacity, ScrollView, TextInput, } from 'react-native'
 import { mainStyle } from '../styles/main';
-import {Camera} from 'expo-camera'
-import { Ionicons } from '@expo/vector-icons';
-import { Icons } from 'react-native-vector-icons';
+import {Camera} from 'expo-camera';
 import { lightTheme } from "../styles/colors";
 import RF from "../utils/RF";
+import TimePicker from 'react-native-simple-time-picker';
 
 export default class addMedication extends Component {
 
-
+    
     constructor(props) {
         super(props);
-        this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
-    }
-    handleBackButtonClick() {
-        this.props.navigation.goBack(null);
-        return true;
+        this.state = {clicks: 0, show: true };
+
     }
 
+        Increment= () => {
+        this.setState({ clicks: this.state.clicks + 1 });
+        }
+        Decrement = () => {
+        this.setState({ clicks: this.state.clicks - 1 });
+        }
+        
+
     render() {
+
+        
         return (
             <View style={mainStyle.container}>
 
@@ -41,13 +47,15 @@ export default class addMedication extends Component {
                 <ScrollView showsVerticalScrollIndicator={false}>
 
                 <Text style={{fontSize: RF(20), fontWeight: "500",}}>Name</Text>
-                <View style={{flexDirection: "row", justifyContent: "space-between", alignItems: "flex-end",  marginBottom: RF(20), }}>
+                <View style={{flexDirection: "row", justifyContent: "space-between", }}>
 
-                    <View style={{}}>
-                        <Text style={{fontSize: RF(15), color: lightTheme.grey, }}>Type medication name or scan a barcode                     </Text>
+                    <View style={{width: "80%", height: RF(50),alignItems: "center", flexDirection: "row", marginBottom:RF(20), borderBottomWidth: RF(2), }}>
+
+                        <TextInput style={{width: RF(300), height: RF(50), fontSize: RF(18), color: lightTheme.grey,borderColor: "#f2f2f2", borderWidth: 1 }} clearButtonMode="while-editing" placeholder="Type Medication name or scan barcode" />
+
                     </View>
 
-                    <View style={{alignItems: "center", paddingRight:RF(20), }}>
+                    <View style={{width: "30%", alignItems: "center", marginRight: RF(20),  }}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("Scan")}>
                         <Image style={{width: RF(30), height: RF(30), }} source={require('../assets/icons/actions/scan.png')}/>
                         <Text style={{fontSize: RF(13), color: lightTheme.orange,fontWeight: "700",  }}>Scan</Text>
@@ -136,7 +144,7 @@ export default class addMedication extends Component {
 
                 <View style={{width: "40%", height: RF(50), backgroundColor: lightTheme.white, flexDirection: "row", justifyContent: "space-between", padding: RF(10) ,borderRadius: RF(20),marginBottom: RF(20),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65, marginBottom: RF(25),}}>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={this.state.clicks > 0 ? this.Decrement : null }>
                         <View style={{alignItems: "center", justifyContent: "center", backgroundColor: lightTheme.peach, height: RF(30), width: RF(30), borderRadius: RF(20), }}>
                             <Image style={{width: RF(18), height: RF(2), }} source={require('../assets/icons/actions/minus.png')}/>
                         </View>
@@ -144,12 +152,12 @@ export default class addMedication extends Component {
                     </TouchableOpacity>
 
                     <View style={{alignItems: "center", justifyContent: "center", backgroundColor: lightTheme.white, height: RF(30), width: RF(30), borderRadius: RF(20), }}>
-                        <Text style={{fontSize: RF(24), fontWeight: "600", }}>1</Text>
+                        <Text style={{fontSize: RF(24), fontWeight: "600", }}>{this.state.clicks}</Text>
 
                     </View>
 
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={this.Increment}>
                         <View style={{alignItems: "center", justifyContent: "center", backgroundColor: lightTheme.peach, height: RF(30), width: RF(30), borderRadius: RF(20), }}>
                         <Image style={{width: RF(18), height: RF(18), }} source={require('../assets/icons/actions/add.png')}/>
 
@@ -160,7 +168,7 @@ export default class addMedication extends Component {
 
                 </View>
 
-                <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(10), }}>Frequecy</Text>
+                <Text style={{fontSize: RF(20), fontWeight: "500", marginBottom: RF(10), }}>Frequency</Text>
 
                 <Text style={{fontSize: RF(15), fontWeight: "500", marginBottom: RF(15), color: lightTheme.orange,  }}>Select the days you want to use this medication</Text>
 
@@ -226,9 +234,11 @@ export default class addMedication extends Component {
                     </View>
                 </TouchableOpacity>
 
+                
+
                 <View style={{backgroundColor: lightTheme.orange, height: RF(50), width: RF(250), borderRadius: RF(10), justifyContent: "center", alignSelf: "center" }}>
 
-                    <Button title="ADD MEDICATION" color= "#F2f2f2" />
+                    <Button title="ADD MEDICATION" color= "#F2f2f2" onPress={() => this.props.navigation.navigate("AllMedication")}/>
 
                 </View>
 

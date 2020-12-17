@@ -4,30 +4,45 @@ import { mainStyle } from '../styles/main';
 import { Ionicons } from '@expo/vector-icons';
 import { lightTheme } from "../styles/colors";
 import RF from "../utils/RF";
+import CalendarAll from './calendarAll';
 
 
 export default class Calendar extends Component {
 
     state = {
-        modalVisible: false
-      };
+        modalVisible: false,
+        tab: 1
+    };
     
       setModalVisible = (visible) => {
         this.setState({ modalVisible: visible });
       }
     
+    onToggleTab = n => {
+        this.setState({ tab: n })
+    }
     
     render() {
 
-        const { modalVisible } = this.state;
+        const { modalVisible,tab } = this.state;
 
         return (
             
             <View style={mainStyle.container}>
 
 
-            <Modal animationType="slide" transparent={true} visible={modalVisible} onRequestClose={() => {Alert.alert("Popup closed."); }}>
+            <Modal 
+                animationType="slide" 
+                transparent={true} 
+                visible={modalVisible} 
+                animationType="fade"
+            >
 
+
+                <View style={{flex: 1,backgroundColor: "rgba(0,0,0,0.5)",justifyContent: "flex-end"}}>
+                    <TouchableOpacity onPress={() => {this.setModalVisible(!modalVisible);}}  style={{width: "100%",height: "100%",backgroundColor: "rgba(0,0,0,0.5)",position: "absolute",top: 0,left: 0}} />
+
+                    
                 <View style={styles.modalView}>
 
                     <View style={{width: "100%", marginTop: RF(25), marginBottom: RF(25), alignContent: "center", justifyContent: "space-between", flexDirection: "row-reverse", }}>
@@ -82,7 +97,7 @@ export default class Calendar extends Component {
                         </TouchableOpacity>
 
                     </View>
-
+                </View>
               
                 </View>
             </Modal>
@@ -104,24 +119,23 @@ export default class Calendar extends Component {
 
                 <View style={{width: "100%",flexDirection: "row",alignItems: "center",justifyContent: "center",marginBottom: RF(20), justifyContent: "space-evenly"}}>
                 
-                    <View style={{flexDirection: "column",borderBottomColor: lightTheme.orange, borderBottomWidth: RF(3)}}>
+                    <TouchableOpacity onPress={()=>this.onToggleTab(1)} style={tab === 1 ? {flexDirection: "column",borderBottomColor: lightTheme.orange, borderBottomWidth: RF(3)} : null}>
 
-                        <Text style={{fontSize: RF(20), color: lightTheme.orange, fontWeight: "600",}}>Daily</Text>
+                        <Text style={tab === 1 ? {fontSize: RF(20), color: lightTheme.orange, fontWeight: "600"} : { fontSize: RF(20), color: lightTheme.grey}}>Daily</Text>
 
-                    </View>
+                    </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("CalendarAll")}>
+                    <TouchableOpacity onPress={()=>this.onToggleTab(2)} style={tab === 2 ? {flexDirection: "column",borderBottomColor: lightTheme.orange, borderBottomWidth: RF(3)} : null}>
 
-                        <Text style={{fontSize: RF(20), color: lightTheme.grey}}>All</Text>
+                        <Text style={tab === 2 ? {fontSize: RF(20), color: lightTheme.orange, fontWeight: "600"} : { fontSize: RF(20), color: lightTheme.grey}}>All</Text>
 
                     </TouchableOpacity>
 
 
-                    </View>
+                </View>
 
-
+            {tab === 1 ? 
             <ScrollView showsVerticalScrollIndicator={false}>
-
 
             <View style={{height: RF(80), marginBottom: RF(40)}}>
             <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{ }}>
@@ -460,10 +474,8 @@ export default class Calendar extends Component {
                     </View>
 
                     <View style={{paddingBottom: RF(10)}} />
-            </ScrollView>  
+            </ScrollView>  : <CalendarAll /> }
             </View>
-              
-
 
         )
     }
@@ -479,7 +491,7 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0,
             height: 4},
         shadowOpacity: 0.30,
-        shadowRadius: 4.65,
+        shadowRadius: 4.65
     },
     
 
