@@ -12,26 +12,48 @@ export default class Log extends Component {
         symptom: 1,
         tab: null,
         vittab: null,
-        vitalrange: 0,
+        heartrange: 0,
+        weightrange: 0,
+        bloodrange: 0,
+        temprange: 0,
     }
     onMoodChange = value => {
         this.setState({ mood: value })
     }
     onTabChange = n => {
-        this.setState({ tab: n })
+        const { tab } = this.state;
+        if (n === tab) {
+            this.setState({ vittab: null,tab: null })
+        }else {
+            this.setState({ tab: n,vittab: null })
+        }
     }
     onVitalsTabChange = n => {
-        this.setState({ vittab: n })
+        const { vittab } = this.state;
+        if (n === vittab) {
+            this.setState({ vittab: null,tab: null })
+        }else {
+            this.setState({ vittab: n,tab: null })
+        }
     }
     onSymptomChange = number => {
         this.setState({ symptom: number })
     }
-    onVitalRangeChange = value => {
-        this.setState({ vitalrange: value })
+    onHeartRangeChange = value => {
+        this.setState({ heartrange: value.toFixed(0) })
+    }
+    onWeightRangeChange = value => {
+        this.setState({ weightrange: value.toFixed(0) })
+    }
+    onBloodRangeChange = value => {
+        this.setState({ bloodrange: value.toFixed(0) })
+    }
+    onTempRangeChange = value => {
+        this.setState({ temprange: value.toFixed(0) })
     }
     
     render() {
-        const { mood,tab,symptom,vittab,vitalrange, } = this.state;
+        const { mood,tab,symptom,vittab,heartrange, weightrange, bloodrange, temprange, } = this.state;
         return (
             <View style={mainStyle.container}>
 
@@ -249,8 +271,7 @@ export default class Log extends Component {
                     { vittab === 1 ?
                         <View style={{width: "100%", marginBottom: RF(5), alignItems: "center", }}>
                         <Text style={{fontSize: RF(34), color: lightTheme.orange, fontWeight: "700", }}>
-                            00
-                            {/* {this.onVitalRangeChange(vitalrange)} */}
+                            {this.state.heartrange}        
                         <Text style={{fontSize: RF(17),  }}>
                             BPM
                         </Text>
@@ -260,8 +281,8 @@ export default class Log extends Component {
                             style={{width: "80%", height: RF(40), }}
                             minimumValue={0}
                             maximumValue={100}
-                            value={vitalrange}
-                            onValueChange={value => this.onVitalRangeChange(value)}
+                            value={heartrange}
+                            onValueChange={value => this.onHeartRangeChange(value)}
                             minimumTrackTintColor="#49A663"
                             maximumTrackTintColor="#c4c4c4" /> 
                         </View> : null 
@@ -270,7 +291,7 @@ export default class Log extends Component {
                     { vittab === 2 ?
                         <View style={{width: "100%", marginBottom: RF(5), alignItems: "center", }}>
                         <Text style={{fontSize: RF(34), color: lightTheme.orange, fontWeight: "700", }}>
-                            00
+                        {this.state.weightrange}  
                         <Text style={{fontSize: RF(17),  }}>
                             kg
                         </Text>
@@ -280,7 +301,8 @@ export default class Log extends Component {
                             style={{width: "80%", height: RF(40), }}
                             minimumValue={0}
                             maximumValue={100}
-                            onValueChange={value => this.onVitalRangeChange(value)}
+                            value={weightrange}
+                            onValueChange={value => this.onWeightRangeChange(value)}
                             minimumTrackTintColor="#49A663"
                             maximumTrackTintColor="#c4c4c4"/> 
                         </View>: null
@@ -289,7 +311,7 @@ export default class Log extends Component {
                     { vittab === 3 ?
                         <View style={{width: "100%",marginBottom: RF(5), alignItems: "center", }}>
                         <Text style={{fontSize: RF(34), color: lightTheme.orange, fontWeight: "700", }}>
-                            00
+                        {this.state.bloodrange}  
                         <Text style={{fontSize: RF(17),  }}>
                             mg/dL
                         </Text>
@@ -299,7 +321,8 @@ export default class Log extends Component {
                             style={{width: "80%", height: RF(40), }}
                             minimumValue={0}
                             maximumValue={100}
-                            onValueChange={value => this.onVitalRangeChange(value)}
+                            value={bloodrange}
+                            onValueChange={value => this.onBloodRangeChange(value)}
                             minimumTrackTintColor="#49A663"
                             maximumTrackTintColor="#c4c4c4"/> 
                         </View> : null
@@ -308,7 +331,7 @@ export default class Log extends Component {
                     { vittab === 4 ?
                         <View style={{width: "100%", marginBottom: RF(5), alignItems: "center", }}>
                         <Text style={{fontSize: RF(34), color: lightTheme.orange, fontWeight: "700", }}>
-                            00
+                        {this.state.temprange}  
                         <Text style={{fontSize: RF(17),  }}>
                             C
                         </Text>
@@ -318,7 +341,8 @@ export default class Log extends Component {
                             style={{width: "80%", height: RF(40), }}
                             minimumValue={0}
                             maximumValue={100}
-                            onValueChange={value => this.onVitalRangeChange(value)}
+                            value={temprange}
+                            onValueChange={value => this.onTempRangeChange(value)}
                             minimumTrackTintColor="#49A663"
                             maximumTrackTintColor="#c4c4c4"/> 
                         </View> : null

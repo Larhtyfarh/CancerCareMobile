@@ -12,7 +12,7 @@ export default class Report extends Component {
     try {
       const result = await Share.share({
         message:
-          'React Native | A framework for building native apps using React',
+          'CancerCare | Share report with...',
       });
 
       if (result.action === Share.sharedAction) {
@@ -101,7 +101,7 @@ export default class Report extends Component {
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between", }}>
+                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", }}>
                             <Image style={{width: RF(44), height: RF(40), }} source={require('../assets/images/heartRate.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Heart Rate</Text>
@@ -112,25 +112,40 @@ export default class Report extends Component {
 
                             </View>
 
-                            <View style={{paddingHorizontal: RF(25)}}>
+                            <View style={{flex: 1, alignItems: "flex-end", }}>
 
-                                <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                <TouchableOpacity onPress={this.onShare}>
+
+                                    <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+
+                                </TouchableOpacity>
 
                             </View> 
 
                         </View>
 
-                        <View style={{paddingHorizontal: RF(30)}}>
+                        <View style={{flexDirection: "row", }}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>160</Text>
+                            <View style={{paddingHorizontal: RF(30)}}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>140</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>160</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>120</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>140</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey,}}>80</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>120</Text>
+
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>80</Text>
+
+                            </View>
+
+                            <View>
+
+                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10) }} source={require('../assets/images/heartRateGraph.png')}/>
+
+                            </View>
 
                         </View>
+                        
 
                         <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between", }}>
 
@@ -157,7 +172,7 @@ export default class Report extends Component {
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}>
+                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", }}>
                             <Image style={{width: RF(44), height: RF(40), }} source={require('../assets/images/weight.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Weight</Text>
@@ -168,23 +183,35 @@ export default class Report extends Component {
 
                             </View>
 
-                            <View style={{paddingHorizontal: RF(25)}}>
+                            <View style={{flex: 1, alignItems: "flex-end", }}>
 
-                                <Image style={{ width:RF(18), height: RF(18), }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                <TouchableOpacity onPress={this.onShare}>
+                                    <Image style={{ width:RF(18), height: RF(18), }} source={require('../assets/icons/actions/sendBlack.png')}/>
+
+                                </TouchableOpacity>
 
                             </View> 
 
                         </View>
 
-                        <View style={{paddingHorizontal: RF(30)}}>
+                        <View style={{flexDirection: "row", }}>
+                            <View style={{paddingHorizontal: RF(30)}}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>80</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>80</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>60</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>60</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>40</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>40</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey,}}>20</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>20</Text>
+
+                            </View>
+
+                            <View>
+
+                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10) }} source={require('../assets/images/weightGraph.png')}/>
+
+                            </View>
 
                         </View>
 
@@ -212,7 +239,7 @@ export default class Report extends Component {
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}>
+                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", }}>
                             <Image style={{width: RF(23), height: RF(40), }} source={require('../assets/images/bloodSugar.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Blood Sugar</Text>
@@ -223,23 +250,35 @@ export default class Report extends Component {
 
                             </View>
 
-                            <View style={{paddingHorizontal: RF(25)}}>
+                            <View style={{flex: 1, alignItems: "flex-end", }}>
 
-                                <Image style={{ width:RF(18), height: RF(18), }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                <TouchableOpacity onPress={this.onShare}>
+                                    <Image style={{ width:RF(18), height: RF(18), }} source={require('../assets/icons/actions/sendBlack.png')}/>
+
+                                </TouchableOpacity>
 
                             </View> 
 
                         </View>
 
-                        <View style={{paddingHorizontal: RF(30)}}>
+                        <View style={{flexDirection: "row", }}>
+                            <View style={{paddingHorizontal: RF(30)}}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>160</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>160</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>140</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>140</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>120</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>120</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey,}}>80</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>80</Text>
+
+                            </View>
+
+                            <View>
+
+                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10)}} source={require('../assets/images/bloodSugarGraph.png')}/>
+
+                            </View>
 
                         </View>
 
@@ -268,7 +307,7 @@ export default class Report extends Component {
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}>
+                        <View style={{paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", }}>
                             <Image style={{width: RF(17), height: RF(40), }} source={require('../assets/images/temperature.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Temperature</Text>
@@ -279,23 +318,34 @@ export default class Report extends Component {
 
                             </View>
 
-                            <View style={{paddingHorizontal: RF(25)}}>
+                            <View style={{flex: 1, alignItems: "flex-end", }}>
 
-                                <Image style={{ width:RF(18), height: RF(18), }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                <TouchableOpacity onPress={this.onShare}>
+                                    <Image style={{ width:RF(18), height: RF(18), }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                </TouchableOpacity>
 
                             </View> 
 
                         </View>
 
-                        <View style={{paddingHorizontal: RF(30)}}>
+                        <View style={{flexDirection: "row", }}>
+                            <View style={{paddingHorizontal: RF(30)}}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>35</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>35</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>30</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>30</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(25)}}>25</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>25</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey,}}>20</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>20</Text>
+
+                            </View>
+
+                            <View>
+
+                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10)}} source={require('../assets/images/heartRateGraph.png')}/>
+
+                            </View>
 
                         </View>
 
@@ -320,7 +370,11 @@ export default class Report extends Component {
                 </View>
                 </View> 
                 
-                :
+                : null }
+
+
+
+                {tab === 2 ?
 
                 <View>
 
@@ -328,7 +382,7 @@ export default class Report extends Component {
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between", }}>
+                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", }}>
                             <Image style={{width: RF(35), height: RF(40), }} source={require('../assets/images/fatigue.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Fatigue</Text>
@@ -339,27 +393,39 @@ export default class Report extends Component {
 
                             </View>
 
-                            <View style={{paddingHorizontal: RF(25)}}>
+                            <View style={{flex: 1, alignItems: "flex-end", }}>
 
-                                <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                <TouchableOpacity onPress={this.onShare}>
+                                    <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+
+                                </TouchableOpacity>
 
                             </View> 
 
                         </View>
 
-                        <View style={{marginBottom: RF(5), width: "25%" }}>
+                        <View style={{flexDirection: "row", }}>
+                            <View style={{marginBottom: RF(5), width: "25%" }}>
 
-                            <View style={{}}>
+                                <View style={{}}>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Unbearable</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unbearable</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Severe</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Severe</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Moderate</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Moderate</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Mild</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Mild</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", }}>None</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>None</Text>
+
+                                </View>
+
+                            </View>
+
+                            <View>
+
+                                <Image style={{width: RF(240), height: RF(125), marginHorizontal: RF(25), }} source={require('../assets/images/fatigueGraph.png')}/>
 
                             </View>
 
@@ -390,7 +456,7 @@ export default class Report extends Component {
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between", }}>
+                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", }}>
                             <Image style={{width: RF(25), height: RF(40), }} source={require('../assets/images/nausea.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Nausea</Text>
@@ -401,27 +467,39 @@ export default class Report extends Component {
 
                             </View>
 
-                            <View style={{paddingHorizontal: RF(25)}}>
+                            <View style={{flex: 1, alignItems: "flex-end", }}>
 
-                                <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                <TouchableOpacity onPress={this.onShare}>
+                                    <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                
+                                </TouchableOpacity>
 
                             </View> 
 
                         </View>
 
-                        <View style={{marginBottom: RF(5), width: "25%" }}>
+                        <View style={{flexDirection: "row"}}>
+                            <View style={{marginBottom: RF(5), width: "25%" }}>
 
-                            <View style={{}}>
+                                <View style={{}}>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Unbearable</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unbearable</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Severe</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Severe</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Moderate</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Moderate</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Mild</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Mild</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", }}>None</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>None</Text>
+
+                                </View>
+
+                            </View>
+
+                            <View>
+
+                                <Image style={{width: RF(240), height: RF(125), marginHorizontal: RF(25)}} source={require('../assets/images/nauseaGraph.png')}/>
 
                             </View>
 
@@ -451,7 +529,7 @@ export default class Report extends Component {
 
                     <View style={{flexDirection: "column"}}>
 
-                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", justifyContent: "space-between", }}>
+                        <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center",}}>
                             <Image style={{width: RF(35), height: RF(40), }} source={require('../assets/images/headache.png')}/>
                         
                             <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Headache</Text>
@@ -462,27 +540,39 @@ export default class Report extends Component {
 
                             </View>
 
-                            <View style={{paddingHorizontal: RF(25)}}>
+                            <View style={{flex: 1, alignItems: "flex-end", }}>
 
-                                <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+                                <TouchableOpacity onPress={this.onShare}>
+                                    <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+
+                                </TouchableOpacity>
 
                             </View> 
 
                         </View>
 
-                        <View style={{marginBottom: RF(5), width: "25%" }}>
+                        <View style={{flexDirection: "row"}}>
+                            <View style={{marginBottom: RF(5), width: "25%" }}>
 
-                            <View style={{}}>
+                                <View style={{}}>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Unbearable</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Unbearable</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Severe</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Severe</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Moderate</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Moderate</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(20)}}>Mild</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Mild</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", }}>None</Text>
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>None</Text>
+
+                                </View>
+
+                            </View>
+
+                            <View>
+
+                                <Image style={{width: RF(240), height: RF(125), marginHorizontal: RF(25)}} source={require('../assets/images/headacheGraph.png')}/>
 
                             </View>
 
@@ -509,7 +599,85 @@ export default class Report extends Component {
                     </View> 
 
 
-                </View> }
+                </View> : null }
+
+
+
+                { tab === 3 ?
+                
+                    <View>
+
+                        <View style={{width: "100%",height: RF(270),backgroundColor: lightTheme.white,borderRadius: RF(10),elevation: 2,shadowColor: "rgba(57,57,57,0.10)",shadowOffset: {width: 0,height: 4},shadowOpacity: 0.30,shadowRadius: 4.65,marginBottom: RF(25)}}>
+
+                            <View style={{flexDirection: "column"}}>
+
+                                <View style={{width: "100%", paddingHorizontal: RF(25), paddingVertical: RF(25), flexDirection: "row", alignItems: "center", }}>
+                                    <Image style={{width: RF(40), height: RF(40), }} source={require('../assets/images/moodExcited.png')}/>
+                                
+                                    <Text style={{fontSize: RF(30), fontWeight: "800", paddingHorizontal: RF(15)}}>Mood</Text>
+
+                                    <View style={{width: RF(60), height: RF(40), borderRadius: RF(15), backgroundColor: "#F0F2F6", justifyContent: "center",  flexDirection: "row", }}>
+
+                                        <Text style={{fontSize: RF(14), color: lightTheme.black, alignSelf: "center" }}> 24 H</Text>
+
+                                    </View>
+
+                                    <View style={{flex: 1, alignItems: "flex-end", }}>
+
+                                        <TouchableOpacity onPress={this.onShare}>
+                                            <Image style={{ width:RF(18), height: RF(18),  }} source={require('../assets/icons/actions/sendBlack.png')}/>
+
+                                        </TouchableOpacity>
+
+                                    </View> 
+
+                                </View>
+
+                                <View style={{flexDirection: "row"}}>
+                                    <View style={{marginBottom: RF(5), width: "20%" }}>
+
+                                        <View style={{}}>
+
+                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Excited</Text>
+
+                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Happy</Text>
+
+                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Neutral</Text>
+
+                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Sad</Text>
+
+                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unhappy</Text>
+
+                                        </View>
+
+                                    </View>
+
+                                    <View>
+
+                                        <Image style={{width: RF(240), height: RF(120), marginHorizontal: RF(25) }} source={require('../assets/images/moodGraph.png')}/>
+
+                                    </View>
+
+                                </View>
+
+                                <View style={{flexDirection: "row", paddingHorizontal: RF(70), justifyContent: "space-between", }}>
+
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+
+                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+
+                                </View>
+
+                                </View>
+                        </View>
+
+                    </View> : null}
 
                 </ScrollView>  
                 

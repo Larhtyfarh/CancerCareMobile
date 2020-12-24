@@ -129,7 +129,7 @@ export const Stack = () => {
         <NavigationContainer>
             <Routes.Navigator
                 drawerContent={(props) => <Drawer {...props} />}
-                // drawerPosition="right"
+                drawerPosition="right"
             >
                 <Routes.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
                 <Routes.Screen name="CalendarAll" component={SCREENS.CalendarAll } options={{ headerShown: false }}/>
