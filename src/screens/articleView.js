@@ -9,14 +9,36 @@ export default class articleView extends Component {
     constructor(props) {
         super(props);
         this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+        this.state = {heart: 0, save: 0, };
     }
     handleBackButtonClick() {
         this.props.navigation.goBack(null);
         return true;
     }
 
+    onClickHeart = n => {
+        const { heart } = this.state;
+        if (n === heart) {
+            this.setState({heart: null })
+        }else {
+            this.setState({heart: n })
+        }
+    }
+
+    onClickSave = n => {
+        const { save } = this.state;
+        if (n === save) {
+            this.setState({save: null })
+        }else {
+            this.setState({save: n })
+        }
+    }
+
 
     render() {
+
+        const { heart, save } = this.state;
+
         return (
             <View style={mainStyle.container}>
 
@@ -52,15 +74,15 @@ export default class articleView extends Component {
                         </View>
 
                         <View style={{flexDirection: "row",  }}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onClickSave(1)}>
 
-                                <Image style={{width: RF(21), height: RF(25), }} source={require('../assets/icons/actions/saveOrange.png')}/>
+                                <Image style={{width: RF(21), height: RF(25), }} source={save === 1? require('../assets/icons/actions/savedFull.png') : require('../assets/icons/actions/saveOrange.png')}/>
                                 
                             </TouchableOpacity>
                             
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onClickHeart(1)}>
                             
-                                <Image style={{width: RF(27), height: RF(25), marginHorizontal: RF(20), }} source={require('../assets/icons/actions/heartOrange.png')}/>
+                                <Image style={{width: RF(27), height: RF(25), marginHorizontal: RF(20), }} source={heart === 1? require('../assets/icons/actions/heartFull.png') : require('../assets/icons/actions/heartOrange.png')}/>
                             
                             </TouchableOpacity>
 

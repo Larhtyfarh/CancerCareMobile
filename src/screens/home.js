@@ -4,13 +4,38 @@ import { mainStyle } from '../styles/main';
 import { Ionicons } from '@expo/vector-icons';
 import { lightTheme } from "../styles/colors";
 import RF from "../utils/RF";
+import Appointment from '../components/popups/appointment';
+import Vital from '../components/popups/vital';
+
 
 
 export default class Home extends Component {
+    state = {
+        payload: {
+            title: "",
+            name: "",
+            type: "",
+            address: "",
+            phone: "",
+            date: "",
+            time: ""
+        },
+        showAppointment: false
+    }
+    onShowAppointment = (v) => {
+        this.setState({
+            showAppointment: true,
+            payload: { ...v }
+        })
+    }
+    onHideAppointment = () => {
+        this.setState({ showAppointment: false })
+    }
     
     render() {
+        const { showAppointment,payload,} = this.state;
         return (
-            
+            <>
             <View style={mainStyle.container}>
                 <View style={styles.header}>
 
@@ -34,41 +59,51 @@ export default class Home extends Component {
 
                     <View style={styles.medCard}>
 
+                        <View style={{alignItems: "flex-end", marginRight: RF(15), marginTop: RF(15), }}>
+                            <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddMedication")}}>
+                                <Ionicons name="md-add" size={RF(30)} color="#FA4A0C" />
+                            </TouchableOpacity>
+                    </View>
+
                     </View>
 
 
                     <Text style={styles.subheading}>Appointment</Text>
 
+                    <View style={styles.appCard}>
+
+                        <View style={{alignItems: "flex-end", marginRight: RF(15), marginTop: RF(15), }}>
+                            <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddAppointment")}}>
+                                <Ionicons name="md-add" size={RF(30)} color="#FA4A0C" />
+                            </TouchableOpacity>
+                        </View>
 
 
-                    <View style={styles.appointmentContainer}>
-                        <View style={styles.appointmentCard}>
-                            <View style={styles.appointmentDate}>
-                                <Text style={{fontSize: RF(20),fontWeight: "700",color: lightTheme.white,marginBottom: RF(15)}}>Wed</Text>
-                                <Text style={{fontSize: RF(18),fontWeight: "500",color: lightTheme.white}}>11</Text>
+                        <ScrollView horizontal showsHorizontalScrollIndicator="false" contentContainerStyle={{alignItems: "flex-end",marginBottom: RF(20),paddingHorizontal: RF(17)}}>
+                            <TouchableOpacity onPress={()=>this.onShowAppointment({title: "Surgery Consult",name: "Dr James",type:"Surgery",address:"52, Peters drive, MidLands road.",phone: "+44 300 790 6268",date:"Wed 11, November",time:"11:00a.m"})} style={{width: RF(150),alignItems: "center",justifyContent: "center",zIndex: 2,marginRight: RF(25)}}>
+                                <View style={{width: "100%",height: RF(45),backgroundColor: "#3F27D2",borderRadius: RF(10),marginBottom: RF(7),alignItems: "center",justifyContent: "center"}}>
+                                    <Text style={{color: "#FFF",fontWeight: "700",fontSize: RF(18)}}>Surgery Consult</Text>
                             </View>
-                            <View>
-                                <Text style={styles.appointmentTitle}>Surgery Consult</Text>
-                                <Text style={styles.appointmentDoctor}>Dr James</Text>
-                                <Text style={{fontSize: RF(16),fontWeight: "500",color: "#656565",marginBottom: RF(2)}}>Surgery</Text>
-                                <Text style={{fontSize: RF(16),fontWeight: "500",color: "#656565",marginBottom: RF(2)}}>11.00am</Text>
+                                <View style={{width: RF(20),height: RF(20),borderRadius: RF(10),backgroundColor: "#C4C4C4",borderWidth: 2,borderColor: "#3F27D2",marginBottom: RF(3)}} />
+                                <Text style={{color: "#FA4A0C",fontSize: RF(16),fontWeight: "700"}}>Wed 11</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onShowAppointment({title: "Chemoterapy",name: "Dr Tim",type:"General",address:"52, Peters drive, MidLands road.",phone: "+44 300 790 6268",date:"Mon 16, November",time:"11:00a.m"})} style={{width: RF(150),alignItems: "center",justifyContent: "center",zIndex: 2,marginRight: RF(25)}}>
+                                <View style={{width: "100%",height: RF(45),backgroundColor: "#3F27D2",borderRadius: RF(10),marginBottom: RF(7),alignItems: "center",justifyContent: "center"}}>
+                                    <Text style={{color: "#FFF",fontWeight: "700",fontSize: RF(18)}}>Chemoterapy</Text>
                             </View>
+                                <View style={{width: RF(20),height: RF(20),borderRadius: RF(10),backgroundColor: "#C4C4C4",borderWidth: 2,borderColor: "#3F27D2",marginBottom: RF(3)}} />
+                                <Text style={{color: "#FA4A0C",fontSize: RF(16),fontWeight: "700"}}>Mon 16</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>this.onShowAppointment({title: "Check Up",name: "Dr James",type:"Surgery",address:"52, Peters drive, MidLands road.",phone: "+44 300 790 6268",date:"Thur 19, November",time:"09:00a.m"})} style={{width: RF(150),alignItems: "center",justifyContent: "center",zIndex: 2}}>
+                                <View style={{width: "100%",height: RF(45),backgroundColor: "#3F27D2",borderRadius: RF(10),marginBottom: RF(7),alignItems: "center",justifyContent: "center"}}>
+                                    <Text style={{color: "#FFF",fontWeight: "700",fontSize: RF(18)}}>Checkup</Text>
                         </View>
-                        <View style={styles.appointmentCard}>
-                            <View style={styles.appointmentDate}>
-                                <Text style={{fontSize: RF(20),fontWeight: "700",color: lightTheme.white,marginBottom: RF(15)}}>Mon</Text>
-                                <Text style={{fontSize: RF(18),fontWeight: "500",color: lightTheme.white}}>15</Text>
-                            </View>
-                            <View>
-                                <Text style={styles.appointmentTitle}>Chemoterapy</Text>
-                                <Text style={styles.appointmentDoctor}>Dr Tim</Text>
-                                <Text style={{fontSize: RF(16),fontWeight: "500",color: "#656565",marginBottom: RF(2)}}>General</Text>
-                                <Text style={{fontSize: RF(16),fontWeight: "500",color: "#656565",marginBottom: RF(2)}}>11.00am</Text>
-                            </View>
-                        </View>
+                                <View style={{width: RF(20),height: RF(20),borderRadius: RF(10),backgroundColor: "#C4C4C4",borderWidth: 2,borderColor: "#3F27D2",marginBottom: RF(3)}} />
+                                <Text style={{color: "#FA4A0C",fontSize: RF(16),fontWeight: "700"}}>Thur 19</Text>
+                            </TouchableOpacity>
+                            <View style={{width: RF(550),height: RF(4),backgroundColor: "#3F27D2",position: "absolute",bottom: RF(25),left: RF(17)}} />
+                        </ScrollView>
                     </View>
-
-
 
                     <Text style={styles.quest}>How are you today?</Text>
 
@@ -80,13 +115,17 @@ export default class Home extends Component {
                     <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{marginBottom: RF(30)}}>
                         
                         <View style={{width: "100%", justifyContent: "space-between", flexDirection: "row"}}>
-                        <View style={styles.vitalsContainer}>
-                        
-                            <Image source={require("../assets/images/heartRate.png")} style={styles.vitalsImage}/>
-                            <Text style={styles.vitalsLabel}>Heart Rate</Text>
-                            <Text style={styles.vitalsValue}>77 <Text style={{fontSize: RF(14),fontWeight: "600"}}>BPM</Text></Text>
+                        <TouchableOpacity >
+                                
+                                <View style={styles.vitalsContainer}>
+                                
+                                    <Image source={require("../assets/images/heartRate.png")} style={styles.vitalsImage}/>
+                                    <Text style={styles.vitalsLabel}>Heart Rate</Text>
+                                    <Text style={styles.vitalsValue}>77 <Text style={{fontSize: RF(14),fontWeight: "600"}}>BPM</Text></Text>
 
-                        </View>
+                                </View>
+
+                        </TouchableOpacity>
 
                         <View style={styles.vitalsContainer}>
 
@@ -164,7 +203,16 @@ export default class Home extends Component {
                     <View style={{paddingBottom: RF(10)}} />
                 </ScrollView>
             </View>
+
+            <Appointment 
+                modalVisible={showAppointment}
+                payload={payload}
+                onHide={this.onHideAppointment}
+            />
+
             
+            
+            </>
         )
     }
 }
@@ -196,6 +244,20 @@ const styles = StyleSheet.create({
     medCard: {
         width: "100%",
         height: RF(180),
+        backgroundColor: lightTheme.white,
+        borderRadius: RF(10),
+        elevation: 2,
+        shadowColor: "rgba(57,57,57,0.10)",
+        shadowOffset: {width: 0,
+            height: 4},
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        marginBottom: RF(25),
+    },
+
+    appCard: {
+        width: "100%",
+        height: RF(165),
         backgroundColor: lightTheme.white,
         borderRadius: RF(10),
         elevation: 2,

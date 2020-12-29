@@ -17,6 +17,7 @@ export default class allMedication extends Component {
     }
 
     render() {
+
         return (
 
             <View style={mainStyle.container}>

@@ -62,7 +62,7 @@ const Dashboard = () => {
                 activeTintColor: "#3F27D2",
                 inactiveTintColor: "#9A9A9D",
                 labelStyle: {
-                    fontSize: 12,
+                    fontSize: 16,
                     fontWeight: "600",
                     margin: 0
                 },

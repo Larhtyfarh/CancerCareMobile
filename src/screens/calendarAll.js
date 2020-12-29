@@ -17,7 +17,7 @@ export default class CalendarAll extends Component {
 
                     <Text style={{fontSize: RF(24), fontWeight: "700", color: lightTheme.orange, }}>Medications</Text>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("AllMedication")}>
+                    <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddAppointment")}}>
 
                         <Text style={{fontSize: RF(14),fontWeight: "600" ,color: lightTheme.orange, textDecorationLine: "underline",  }}>See all</Text>
 

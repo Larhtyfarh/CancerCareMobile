@@ -4,6 +4,7 @@ import { mainStyle } from '../styles/main';
 import { Ionicons  } from '@expo/vector-icons';
 import { lightTheme } from "../styles/colors";
 import RF from "../utils/RF";
+import Message from '../components/message';
 import Slider from '@react-native-community/slider';
 
 export default class Log extends Component {
@@ -16,6 +17,7 @@ export default class Log extends Component {
         weightrange: 0,
         bloodrange: 0,
         temprange: 0,
+        message: false
     }
     onMoodChange = value => {
         this.setState({ mood: value })
@@ -39,6 +41,7 @@ export default class Log extends Component {
     onSymptomChange = number => {
         this.setState({ symptom: number })
     }
+
     onHeartRangeChange = value => {
         this.setState({ heartrange: value.toFixed(0) })
     }
@@ -51,10 +54,26 @@ export default class Log extends Component {
     onTempRangeChange = value => {
         this.setState({ temprange: value.toFixed(0) })
     }
+
+    showMessage = () => {
+        this.setState({ message: true },() => {
+            setTimeout(()=>{
+                this.setState({ message: false },()=>{
+                    this.props.navigation.navigate("Home")
+                })
+            },1000)
+        })  
+    }
+    hideMessage = () => {
+        this.setState({ message: false }) 
+    }
     
     render() {
         const { mood,tab,symptom,vittab,heartrange, weightrange, bloodrange, temprange, } = this.state;
         return (
+
+            <>
+
             <View style={mainStyle.container}>
 
                 <View style={{width: "100%",flexDirection: "row-reverse",justifyContent: "space-between",marginBottom: RF(30), alignItems: "center"}}>
@@ -364,7 +383,7 @@ export default class Log extends Component {
 
                 <View style={{backgroundColor: lightTheme.orange, height: RF(50), width: RF(250), borderRadius: RF(10), justifyContent: "center", alignSelf: "center" }}>
 
-                    <Button title="SAVE LOG" color= "#F2f2f2" onPress={() => this.props.navigation.navigate("Home")}/>
+                    <Button title="SAVE LOG" color= "#F2f2f2" onPress={() => this.showMessage()}/>
 
                 </View>
 
@@ -374,19 +393,14 @@ export default class Log extends Component {
             </KeyboardAvoidingView>
 
 
-
-                
-
-
-
-
-
-                
-
-
-
-
             </View>
+
+
+            <Message 
+                modalVisible={this.state.message}
+                message="Logged Successfully"
+            />
+            </>
         )
     }
 }

@@ -4,8 +4,8 @@ import { lightTheme } from '../../styles/colors';
 import RF from '../../utils/RF';
 import MapView from 'react-native-maps';
 
-function Appointment({ modalVisible,onHide,payload }) {
-    const { title,name,type,address,time,date,phone } = payload;
+function FullAppointment({ modalVisible,onHide,fullpayload }) {
+    const { fulltitle,fullname,fulltype,fulladdress,fulltime,fulldate,fullphone } = fullpayload;
 
     const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
     const latLng = `${52.477913},${-1.893199}`;
@@ -33,11 +33,11 @@ function Appointment({ modalVisible,onHide,payload }) {
 
                         <View >
 
-                            <Text style={{fontSize: RF(24), fontWeight: "700", color: lightTheme.orange, marginBottom: RF(6), }}>{title}</Text>
-                            <Text style={{fontSize: RF(24), fontWeight: "700", marginBottom: RF(6), }}>{name}</Text>
-                            <Text style={{fontSize: RF(24), fontWeight: "500", marginBottom: RF(6), }}>{type}</Text>
-                            <Text style={{fontSize: RF(16), fontWeight: "500", marginBottom: RF(6), }}>{address}</Text>
-                            <Text style={{fontSize: RF(14), fontWeight: "500", marginBottom: RF(6), }}>{phone}</Text>
+                            <Text style={{fontSize: RF(24), fontWeight: "700", color: lightTheme.orange, marginBottom: RF(6), }}>{fulltitle}</Text>
+                            <Text style={{fontSize: RF(24), fontWeight: "700", marginBottom: RF(6), }}>{fullname}</Text>
+                            <Text style={{fontSize: RF(24), fontWeight: "500", marginBottom: RF(6), }}>{fulltype}</Text>
+                            <Text style={{fontSize: RF(16), fontWeight: "500", marginBottom: RF(6), }}>{fulladdress}</Text>
+                            <Text style={{fontSize: RF(14), fontWeight: "500", marginBottom: RF(6), }}>{fullphone}</Text>
 
                             <View style={{flexDirection: "row", marginBottom: RF(10) }}>
                                 <TouchableOpacity onPress={()=>Linking.openURL(`tel:${phone}`)}>
@@ -54,12 +54,12 @@ function Appointment({ modalVisible,onHide,payload }) {
 
                                 <View style={{width: RF(106), height: RF(20), backgroundColor: lightTheme.peach, borderRadius: RF(10), alignItems: "center", justifyContent: "center", marginRight: RF(15), }}>
 
-                                    <Text style={{color: lightTheme.orange, fontSize: RF(14), }}>{date}</Text>
+                                    <Text style={{color: lightTheme.orange, fontSize: RF(14), }}>{fulldate}</Text>
                                 </View>
 
                                 <View style={{width: RF(60), height: RF(20), backgroundColor: lightTheme.lilac, borderRadius: RF(10), alignItems: "center", justifyContent: "center"}}>
 
-                                    <Text style={{color: lightTheme.purple, fontSize: RF(14), }}>{time}</Text>
+                                    <Text style={{color: lightTheme.purple, fontSize: RF(14), }}>{fulltime}</Text>
                                 </View>
 
                             </View>
@@ -74,14 +74,15 @@ function Appointment({ modalVisible,onHide,payload }) {
 } 
 
 
-export default Appointment;
+export default FullAppointment;
 
 const styles = StyleSheet.create({
     modalView: {
         width: "80%",
         backgroundColor: "#f2f2f2",
-        borderRadius: RF(20),
-        minHeight: RF(170),
+        borderTopLeftRadius: RF(20),
+        borderTopRightRadius: RF(20),
+        minHeight: RF(250),
         elevation: 2,
         shadowColor: "rgba(57,57,57,0.10)",
         shadowOffset: {width: 0,

@@ -3,21 +3,96 @@ import { Text, View, StyleSheet, Button, Image, AppRegistry, TouchableOpacity, S
 import { mainStyle } from '../styles/main';
 import { lightTheme } from "../styles/colors";
 import RF from "../utils/RF";
+import Message from '../components/message';
 
 export default class addVitals extends Component {
 
     constructor(props) {
         super(props);
         this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+        this.state = {hearttab: 1, weighttab: 1, bloodsugartab: 1, temperaturetab: 1, bloodpressuretab: 0, respiratorytab: 0, message: false, };
     }
     handleBackButtonClick() {
         this.props.navigation.goBack(null);
         return true;
     }
 
+    onClickHeartTab = n => {
+        const { hearttab } = this.state;
+        if (n === hearttab) {
+            this.setState({hearttab: null })
+        }else {
+            this.setState({hearttab: n })
+        }
+    }
+
+    onClickWeightTab = n => {
+        const { weighttab } = this.state;
+        if (n === weighttab) {
+            this.setState({weighttab: null })
+        }else {
+            this.setState({weighttab: n })
+        }
+    }
+
+    onClickBloodSugarTab = n => {
+        const { bloodsugartab } = this.state;
+        if (n === bloodsugartab) {
+            this.setState({bloodsugartab: null })
+        }else {
+            this.setState({bloodsugartab: n })
+        }
+    }
+
+    onClickTempratureTab = n => {
+        const { temperaturetab } = this.state;
+        if (n === temperaturetab) {
+            this.setState({temperaturetab: null })
+        }else {
+            this.setState({temperaturetab: n })
+        }
+    }
+
+    onClickBloodPressureTab = n => {
+        const { bloodpressuretab } = this.state;
+        if (n === bloodpressuretab) {
+            this.setState({bloodpressuretab: null })
+        }else {
+            this.setState({bloodpressuretab: n })
+        }
+    }
+
+    onClickRespiratoryTab = n => {
+        const { respiratorytab } = this.state;
+        if (n === respiratorytab) {
+            this.setState({respiratorytab: null })
+        }else {
+            this.setState({respiratorytab: n })
+        }
+    }
+
+    showMessage = () => {
+        this.setState({ message: true },() => {
+            setTimeout(()=>{
+                this.setState({ message: false },()=>{
+                    this.props.navigation.navigate("Home")
+                })
+            },1000)
+        })  
+    }
+    hideMessage = () => {
+        this.setState({ message: false }) 
+    }
+
 
     render() {
+
+        const { hearttab, weighttab, bloodsugartab, temperaturetab, bloodpressuretab, respiratorytab,  } = this.state;
+
         return (
+
+            <>
+
             <View style={mainStyle.container}>
 
                 <View style={styles.header}>
@@ -41,8 +116,8 @@ export default class addVitals extends Component {
 
                     <View style={{flexDirection: "row", justifyContent: "space-between", marginBottom: RF(25)}}>
 
-                        <TouchableOpacity>
-                                <View style={styles.vitalsContainerSelected}>
+                        <TouchableOpacity onPress={()=>this.onClickHeartTab(1)}>
+                                <View style={hearttab === 1? styles.vitalsContainerSelected : styles.vitalsContainer}>
                             
                                     <Image source={require("../assets/images/heartRate.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Heart Rate</Text>
@@ -50,8 +125,8 @@ export default class addVitals extends Component {
                                 </View>
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
-                                <View style={styles.vitalsContainerSelected}>
+                            <TouchableOpacity onPress={()=>this.onClickWeightTab(1)}>
+                                <View style={weighttab === 1? styles.vitalsContainerSelected : styles.vitalsContainer}>
                             
                                     <Image source={require("../assets/images/weight.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Weight</Text>
@@ -59,8 +134,8 @@ export default class addVitals extends Component {
                                 </View>
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
-                                <View style={styles.vitalsContainerSelected}>
+                            <TouchableOpacity onPress={()=>this.onClickBloodSugarTab(1)}>
+                                <View style={bloodsugartab === 1? styles.vitalsContainerSelected : styles.vitalsContainer}>
                             
                                     <Image source={require("../assets/images/bloodSugar.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Blood Sugar</Text>
@@ -72,8 +147,8 @@ export default class addVitals extends Component {
 
                     <View style={{flexDirection: "row", justifyContent: "space-between", marginBottom: RF(280), }}>
 
-                        <TouchableOpacity>
-                                <View style={styles.vitalsContainerSelected}>
+                        <TouchableOpacity onPress={()=>this.onClickTempratureTab(1)}>
+                                <View style={temperaturetab === 1? styles.vitalsContainerSelected : styles.vitalsContainer}>
                             
                                     <Image source={require("../assets/images/temperature.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Temperature</Text>
@@ -81,8 +156,8 @@ export default class addVitals extends Component {
                                 </View>
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
-                                <View style={styles.vitalsContainer}>
+                            <TouchableOpacity onPress={()=>this.onClickBloodPressureTab(1)}>
+                                <View style={bloodpressuretab === 1? styles.vitalsContainerSelected : styles.vitalsContainer}>
                             
                                     <Image source={require("../assets/images/bloodPressure.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Blood</Text>
@@ -91,8 +166,8 @@ export default class addVitals extends Component {
                                 </View>
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
-                                <View style={styles.vitalsContainer}>
+                            <TouchableOpacity onPress={()=>this.onClickRespiratoryTab(1)}>
+                                <View style={respiratorytab === 1? styles.vitalsContainerSelected : styles.vitalsContainer}>
                             
                                     <Image source={require("../assets/images/respiratory.png")} style={styles.vitalsImage} resizeMode="contain"/>
                                     <Text style={styles.vitalsLabel}>Respiratory</Text>
@@ -105,7 +180,7 @@ export default class addVitals extends Component {
 
                     <View style={{backgroundColor: lightTheme.orange, height: RF(50), width: RF(250), borderRadius: RF(10), justifyContent: "center", alignSelf: "center" }}>
 
-                    <Button title="SAVE CHANGES" color= "#F2f2f2" onPress={() => this.props.navigation.navigate("Home")}/>
+                    <Button title="SAVE CHANGES" color= "#F2f2f2" onPress={() => this.showMessage()}/>
 
                     </View>
 
@@ -115,6 +190,12 @@ export default class addVitals extends Component {
                 </ScrollView>
 
             </View>
+
+            <Message 
+                modalVisible={this.state.message}
+                message="Changes Saved"
+            />
+            </>
 
         )
     }

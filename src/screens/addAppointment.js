@@ -20,7 +20,12 @@ export default class addAppointment extends Component {
     }
 
     state = {
-        message: false
+        message: false,
+        datetab: 3,
+        monthtab: 1,
+        timetab: 5,
+        type: 0,
+
     }
     showMessage = () => {
         this.setState({ message: true },() => {
@@ -35,8 +40,35 @@ export default class addAppointment extends Component {
         this.setState({ message: false }) 
     }
 
+    onToggleMonthTab = n => {
+        this.setState({ monthtab: n })
+    }
+
+    onToggleDateTab = n => {
+        this.setState({ datetab: n })
+    }
+
+    onToggleTimeTab = n => {
+        this.setState({ timetab: n })
+    }
+
+    onClickType = n => {
+        const { type } = this.state;
+        if (n === type) {
+            this.setState({type: null })
+        }else {
+            this.setState({type: n })
+        }
+    }
+
+
+    
+
 
     render() {
+
+        const { monthtab, datetab, timetab, type, } = this.state;
+
         return (
             <>
             <View style={mainStyle.container}>
@@ -81,77 +113,150 @@ export default class addAppointment extends Component {
 
                 <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{ }}>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(1)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", color: lightTheme.white}}>JAN</Text>
+                        <View style={monthtab === 1? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 1? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>JAN</Text>
+                                
+                        </View>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
-                        
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>FEB</Text>
-                            
-                    </View>
+                    </TouchableOpacity>
+                    
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(2)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>MAR</Text>
+                        <View style={monthtab === 2? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 2? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>FEB</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(3)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>APR</Text>
+                        <View style={monthtab === 3? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 3? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>MAR</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(4)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>MAY</Text>
+                        <View style={monthtab === 4? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 4? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>APR</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(5)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>JUN</Text>
+                        <View style={monthtab === 5? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 5? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>MAY</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(6)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>JUL</Text>
+                        <View style={monthtab === 6? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 6? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>JUN</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(7)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>AUG</Text>
+                        <View style={monthtab === 7? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 7? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>JUL</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(8)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>SEP</Text>
+                        <View style={monthtab === 8? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 8? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>AUG</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(9)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>OCT</Text>
+                        <View style={monthtab === 9? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 9? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>SEP</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(10)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>NOV</Text>
+                        <View style={monthtab === 10? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 10? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>OCT</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(11)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>DEC</Text>
+                        <View style={monthtab === 11? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={monthtab === 11? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>NOV</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleMonthTab(12)}> 
+                        
+                        <View style={monthtab === 12? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }:
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
+                            
+                            <Text style={monthtab === 12? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} :
+                                        {fontSize: RF(20),fontWeight: "600", }}>DEC</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
                 </ScrollView>
 
@@ -159,225 +264,456 @@ export default class addAppointment extends Component {
 
                     <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{ }}>
                     
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(1)}> 
+                        <View style={datetab === 1 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
+                            <Text style={datetab === 1 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>15</Text>
+                            <Text style={datetab === 1 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>15</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(2)}> 
+                        <View style={datetab === 2 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>M</Text>
+                            <Text style={datetab === 2 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>M</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>16</Text>
+                            <Text style={datetab === 2 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>16</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(3)}> 
+                        <View style={datetab === 3 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}}>T</Text>
+                            <Text style={datetab === 3 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>T</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}}>17</Text>
+                            <Text style={datetab === 3 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>17</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(4)}> 
+                        <View style={datetab === 4 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>W</Text>
+                            <Text style={datetab === 4 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>W</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>18</Text>
+                            <Text style={datetab === 4 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>18</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(5)}> 
+                        <View style={datetab === 5 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>T</Text>
+                            <Text style={datetab === 5 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>T</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>19</Text>
+                            <Text style={datetab === 5 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>19</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(6)}> 
+                        <View style={datetab === 6 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>F</Text>
+                            <Text style={datetab === 6 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>F</Text>
                             
-                            <Text style={{fontSize: RF(18),color: lightTheme.grey,fontWeight: "700"}}>20</Text>
+                            <Text style={datetab === 6 ?{fontSize: RF(18),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(18),color: lightTheme.grey,fontWeight: "600"}}>20</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(7)}> 
+                        <View style={datetab === 7 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
+                            <Text style={datetab === 7 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>21</Text>
+                            <Text style={datetab === 7 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>21</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(8)}> 
+                        <View style={datetab === 8 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
+                            <Text style={datetab === 8 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>22</Text>
+                            <Text style={datetab === 8 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>22</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(9)}> 
+                        <View style={datetab === 9 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>M</Text>
+                            <Text style={datetab === 9 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>M</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>23</Text>
+                            <Text style={datetab === 9 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>23</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(10)}> 
+                        <View style={datetab === 10 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>T</Text>
+                            <Text style={datetab === 10 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>T</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>24</Text>
+                            <Text style={datetab === 10 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>24</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(11)}> 
+                        <View style={datetab === 11 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>W</Text>
+                            <Text style={datetab === 11 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>W</Text>
                             
-                            <Text style={{fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>25</Text>
+                            <Text style={datetab === 11 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>25</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(12)}> 
+                        <View style={datetab === 12 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>T</Text>
+                            <Text style={datetab === 12 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>T</Text>
                             
-                            <Text style={{fontSize: RF(18),color: lightTheme.grey,fontWeight: "700"}}>26</Text>
+                            <Text style={datetab === 12 ?{fontSize: RF(18),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(18),color: lightTheme.grey,fontWeight: "600"}}>26</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(13)}> 
+                        <View style={datetab === 13 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>F</Text>
+                            <Text style={datetab === 13 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>F</Text>
                             
-                            <Text style={{fontSize: RF(18),color: lightTheme.grey,fontWeight: "700"}}>27</Text>
+                            <Text style={datetab === 13 ?{fontSize: RF(20),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(20),color: lightTheme.grey,fontWeight: "600"}}>27</Text>
                         </View>
-                        <View style={{width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleDateTab(14)}> 
+                        <View style={datetab === 14 ? {width: RF(40),height: RF(75),backgroundColor: lightTheme.purple,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}:
+                                    {width: RF(40),height: RF(75),backgroundColor: lightTheme.white,borderRadius: RF(10),paddingHorizontal: RF(10),paddingVertical: RF(15),alignItems: "center",marginRight: RF(10)}}>
                         
-                            <Text style={{marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
+                            <Text style={datetab === 14 ? {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.white,fontWeight: "600"}:
+                                        {marginBottom: RF(5),fontSize: RF(22),color: lightTheme.grey,fontWeight: "600"}}>S</Text>
                             
-                            <Text style={{fontSize: RF(18),color: lightTheme.grey,fontWeight: "700"}}>28</Text>
+                            <Text style={datetab === 14 ?{fontSize: RF(18),color: lightTheme.white,fontWeight: "600"}:
+                                        {fontSize: RF(18),color: lightTheme.grey,fontWeight: "600"}}>28</Text>
                         </View>
+                    </TouchableOpacity>
                     </ScrollView>
                 </View>
 
                 <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{ }}>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(1)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>07:00</Text>
+                        <View style={timetab === 1? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 1? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>07:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
+                    
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(2)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>07:30</Text>
+                        <View style={timetab === 2? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 2? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>07:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(3)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>08:00</Text>
+                        <View style={timetab === 3? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 3? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>08:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(4)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>08:30</Text>
+                        <View style={timetab === 4? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 4? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>08:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(5)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", color: lightTheme.white, }}>09:30</Text>
+                        <View style={timetab === 5? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 5? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>09:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(6)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600",   }}>10:00</Text>
+                        <View style={timetab === 6? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 6? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>09:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(7)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>10:30</Text>
+                        <View style={timetab === 7? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 7? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>10:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(8)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>11:00</Text>
+                        <View style={timetab === 8? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 8? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>10:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(9)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>11:30</Text>
+                        <View style={timetab === 9? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 9? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>11:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(10)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>12:00</Text>
+                        <View style={timetab === 10? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 10? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>11:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(11)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>12:30</Text>
+                        <View style={timetab === 11? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 11? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>12:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(12)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>01:00</Text>
+                        <View style={timetab === 12? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 12? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>12:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(13)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>01:30</Text>
+                        <View style={timetab === 13? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 13? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>01:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(14)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>02:00</Text>
+                        <View style={timetab === 14? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 14? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>01:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(15)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>02:30</Text>
+                        <View style={timetab === 15? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 15? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>02:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(16)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>03:00</Text>
+                        <View style={timetab === 16? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 16? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>02:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(17)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>03:30</Text>
+                        <View style={timetab === 17? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 17? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>03:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(18)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>04:00</Text>
+                        <View style={timetab === 18? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 18? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>03:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(19)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>04:30</Text>
+                        <View style={timetab === 19? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 19? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>04:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
-                        
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>05:00</Text>
-                            
-                    </View>
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
-                        
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>05:30</Text>
-                            
-                    </View>
+                    
 
-                    <View style={{width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),alignItems: "center", justifyContent: "center", marginRight: RF(20), }}>
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(20)}> 
                         
-                        <Text style={{fontSize: RF(20),fontWeight: "600", }}>06:00</Text>
+                        <View style={timetab === 20? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
                             
-                    </View>
+                            <Text style={timetab === 20? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>04:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(21)}> 
+                        
+                        <View style={timetab === 21? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
+                            
+                            <Text style={timetab === 21? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>05:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(22)}> 
+                        
+                        <View style={timetab === 22? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
+                            
+                            <Text style={timetab === 22? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>05:30</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={()=>this.onToggleTimeTab(23)}> 
+                        
+                        <View style={timetab === 23? {width: RF(50),height: RF(30),backgroundColor: lightTheme.purple ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), } :
+                                        {width: RF(50),height: RF(30),backgroundColor: lightTheme.white ,borderRadius: RF(10),justifyContent: "center" , alignItems: "center",marginRight: RF(20), marginBottom: RF(15), }}>
+                            
+                            <Text style={timetab === 23? {fontSize: RF(20),fontWeight: "600", color: lightTheme.white} : 
+                                                {fontSize: RF(20),fontWeight: "600", }}>06:00</Text>
+                                
+                        </View>
+                        
+                    </TouchableOpacity>
 
                 </ScrollView>
 
@@ -386,54 +722,69 @@ export default class addAppointment extends Component {
                 <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={{marginBottom: RF(30)}}>
                         
                     <View style={{width: "100%", flexDirection: "row"}}>
-                        <View style={styles.vitalsContainer}>
                         
-                            <Image source={require("../assets/images/officeVisit.png")} style={styles.vitalsImage}/>
-                            <Text style={styles.vitalsLabel}>Office Visit</Text>
+                        <TouchableOpacity onPress={()=>this.onClickType(1)}>
+                            <View style={type === 1? styles.vitalsContainerSelected : styles.vitalsContainer }>
+                            
+                                <Image source={require("../assets/images/officeVisit.png")} style={styles.vitalsImage}/>
+                                <Text style={styles.vitalsLabel}>Office Visit</Text>
 
-                        </View>
+                            </View>
+                        </TouchableOpacity>
 
-                        <View style={styles.vitalsContainer}>
+                        <TouchableOpacity onPress={()=>this.onClickType(2)}>
+                            <View style={type === 2? styles.vitalsContainerSelected : styles.vitalsContainer }>
 
                             <Image source={require("../assets/images/test.png")} style={styles.vitalsImage}/>
                             <Text style={styles.vitalsLabel}>Test</Text>
                             
-                        </View>
+                            </View>
+                        </TouchableOpacity>
 
-                        <View style={styles.vitalsContainer}>
+                        <TouchableOpacity onPress={()=>this.onClickType(3)}>
+                            <View style={type === 3? styles.vitalsContainerSelected : styles.vitalsContainer }>
                         
                             <Image source={require("../assets/images/procedure.png")} style={styles.vitalsImage} resizeMode="contain"/>
                             <Text style={styles.vitalsLabel}>Procedure</Text>
                             
-                        </View>
+                            </View>
+                        </TouchableOpacity>
 
-                        <View style={styles.vitalsContainer}>
+                        <TouchableOpacity onPress={()=>this.onClickType(4)}>
+                            <View style={type === 4? styles.vitalsContainerSelected : styles.vitalsContainer }>
 
                             <Image source={require("../assets/images/chemotherapy.png")} style={styles.vitalsImage} resizeMode="contain"/>
                             <Text style={styles.vitalsLabel}>Chemoterapy</Text>
                             
-                        </View>
+                            </View>
+                        </TouchableOpacity>
 
-                        <View style={styles.vitalsContainer}>
+                        <TouchableOpacity onPress={()=>this.onClickType(5)}>
+                            <View style={type === 5? styles.vitalsContainerSelected : styles.vitalsContainer }>
 
                             <Image source={require("../assets/images/radiation.png")} style={styles.vitalsImage} resizeMode="contain"/>
                             <Text style={styles.vitalsLabel}>Radiation</Text>
                             
-                        </View>
+                            </View>
+                        </TouchableOpacity>
 
-                        <View style={styles.vitalsContainer}>
+                        <TouchableOpacity onPress={()=>this.onClickType(6)}>
+                            <View style={type === 6? styles.vitalsContainerSelected : styles.vitalsContainer }>
 
                             <Image source={require("../assets/images/surgery.png")} style={styles.vitalsImage} resizeMode="contain"/>
                             <Text style={styles.vitalsLabel}>Surgery</Text>
                             
-                        </View>
+                            </View>
+                        </TouchableOpacity>
 
-                        <View style={styles.vitalsContainer}>
+                        <TouchableOpacity onPress={()=>this.onClickType(7)}>
+                            <View style={type === 7? styles.vitalsContainerSelected : styles.vitalsContainer }>
 
                             <Image source={require("../assets/images/others.png")} style={styles.vitalsImage} resizeMode="contain"/>
                             <Text style={styles.vitalsLabel}>Others</Text>
                             
-                        </View>
+                            </View>
+                        </TouchableOpacity>
 
                     </View>
 
@@ -471,7 +822,7 @@ export default class addAppointment extends Component {
 
             <Message 
                 modalVisible={this.state.message}
-                message="Saved"
+                message="Added Successfully"
             />
             </>
         )
@@ -505,6 +856,17 @@ const styles = StyleSheet.create({
         width: RF(95),
         height: RF(120),
         backgroundColor: lightTheme.white,
+        borderRadius: RF(20),
+        paddingHorizontal: RF(5),
+        paddingVertical: RF(25),
+        alignItems: "center",
+        marginRight: RF(10),
+    },
+
+    vitalsContainerSelected: {
+        width: RF(95),
+        height: RF(120),
+        backgroundColor: lightTheme.peach,
         borderRadius: RF(20),
         paddingHorizontal: RF(5),
         paddingVertical: RF(25),

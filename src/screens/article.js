@@ -10,13 +10,8 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default class Article extends Component {
 
     state = {
-        modalVisible: false,
         tab: 1
     };
-    
-    setModalVisible = (visible) => {
-        this.setState({ modalVisible: visible });
-    }
     
     onToggleTab = n => {
         this.setState({ tab: n })
@@ -24,7 +19,7 @@ export default class Article extends Component {
 
     render() {
 
-        const { modalVisible,tab, } = this.state;
+        const {tab, } = this.state;
 
         return (
 
