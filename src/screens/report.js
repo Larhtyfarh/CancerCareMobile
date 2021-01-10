@@ -6,6 +6,7 @@ import { lightTheme } from "../styles/colors";
 import RF from "../utils/RF";
 import Icon from 'react-native-vector-icons';
 
+
 export default class Report extends Component {
 
     onShare = async () => {
