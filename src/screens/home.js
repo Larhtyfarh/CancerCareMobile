@@ -155,8 +155,7 @@ export default class Home extends Component {
     let currentSeconds = new Date().getSeconds();
     let seconds = (currentHour - 7) * 3600;
     if (currentHour === 7 || currentHour < 13) {
-      this.setState(
-        {
+      this.setState({
           time: moment.duration().add({
             days: 0,
             hours: 12 - currentHour,
@@ -164,11 +163,9 @@ export default class Home extends Component {
             seconds: 60 - currentSeconds,
           }),
           percentage: (seconds / 46800) * 100,
-        },
-        () => {
+      },() => {
           this.updateTimer();
-        }
-      );
+      });
     } else if (currentHour === 13 || currentHour < 17) {
       this.setState(
         {
@@ -199,8 +196,18 @@ export default class Home extends Component {
           this.updateTimer();
         }
       );
-    }
-  };
+  }else if (currentHour > 21) {
+    this.setState({
+        time: moment.duration().add({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        }),
+        percentage: 0,
+    });
+  }
+};
 
   updateTimer = () => {
     const x = setInterval(() => {
