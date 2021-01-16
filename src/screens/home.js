@@ -181,7 +181,7 @@ export default class Home extends Component {
           this.updateTimer();
         }
       );
-    } else if (currentHour === 17 || currentHour <= 21) {
+    } else if (currentHour === 17 || currentHour < 21) {
       this.setState(
         {
           time: moment.duration().add({
@@ -196,7 +196,18 @@ export default class Home extends Component {
           this.updateTimer();
         }
       );
-  }else if (currentHour > 21) {
+  }else if (currentHour >= 21) {
+    alert("I'm here")
+    this.setState({
+        time: moment.duration().add({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        }),
+        percentage: 0,
+    });
+  }else {
     this.setState({
         time: moment.duration().add({
           days: 0,
