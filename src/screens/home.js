@@ -10,14 +10,20 @@ import {
 import { mainStyle } from "../styles/main";
 import { Ionicons } from "@expo/vector-icons";
 import { lightTheme } from "../styles/colors";
+import SemiCircleProgress from "../components/semicircleprogress";
 import RF from "../utils/RF";
 import Appointment from "../components/popups/appointment";
+import Log1 from "../components/popups/log1";
+import Log2 from "../components/popups/log2";
+import Log3 from "../components/popups/log3";
+import Log4 from "../components/popups/log4";
 import Vital from "../components/popups/vital";
 import Weight from "../components/popups/weight";
 import BloodSugar from "../components/popups/bloodsugar";
 import Temperature from "../components/popups/temperature";
 import Mood from "../components/popups/mood";
 import Symptom from "../components/popups/symptom";
+import moment from "moment";
 
 export default class Home extends Component {
   state = {
@@ -38,6 +44,16 @@ export default class Home extends Component {
     showTemperature: false,
     showMood: false,
     showSymptom: false,
+    time: "",
+    days: 0,
+    hours: 0,
+    mins: 0,
+    secs: 0,
+    percentage: 0,
+    log1: false,
+    log2: false,
+    log3: false,
+    log4: false,
   };
   onShowAppointment = (v) => {
     this.setState({
@@ -47,6 +63,14 @@ export default class Home extends Component {
   };
   onHideAppointment = () => {
     this.setState({ showAppointment: false });
+  };
+  onShowLog = (i) => {
+    this.setState({
+      [`log${i}`]: true,
+    });
+  };
+  onHideLog = (i) => {
+    this.setState({ [`log${i}`]: false });
   };
 
   onShowVital = (v) => {
@@ -125,6 +149,85 @@ export default class Home extends Component {
     this.setState({ showSymptom: false });
   };
 
+  getHourCountdown = () => {
+    let currentHour = new Date().getHours();
+    let currentMinute = new Date().getMinutes();
+    let currentSeconds = new Date().getSeconds();
+    let seconds = (currentHour - 7) * 3600;
+    if (currentHour === 7 || currentHour < 13) {
+      this.setState(
+        {
+          time: moment.duration().add({
+            days: 0,
+            hours: 12 - currentHour,
+            minutes: 60 - currentMinute,
+            seconds: 60 - currentSeconds,
+          }),
+          percentage: (seconds / 46800) * 100,
+        },
+        () => {
+          this.updateTimer();
+        }
+      );
+    } else if (currentHour === 13 || currentHour < 17) {
+      this.setState(
+        {
+          time: moment.duration().add({
+            days: 0,
+            hours: 16 - currentHour,
+            minutes: 60 - currentMinute,
+            seconds: 60 - currentSeconds,
+          }),
+          percentage: (seconds / 46800) * 100,
+        },
+        () => {
+          this.updateTimer();
+        }
+      );
+    } else if (currentHour === 17 || currentHour <= 21) {
+      this.setState(
+        {
+          time: moment.duration().add({
+            days: 0,
+            hours: 20 - currentHour,
+            minutes: 60 - currentMinute,
+            seconds: 60 - currentSeconds,
+          }),
+          percentage: (seconds / 46800) * 100,
+        },
+        () => {
+          this.updateTimer();
+        }
+      );
+    }
+  };
+
+  updateTimer = () => {
+    const x = setInterval(() => {
+      let { time } = this.state;
+      if (time <= 0) {
+        clearInterval(x);
+      } else {
+        time = time.subtract(1, "s");
+        const days = time.days();
+        const hours = time.hours();
+        const mins = time.minutes();
+        const secs = time.seconds();
+        this.setState({
+          days,
+          hours,
+          mins,
+          secs,
+          time,
+        });
+      }
+    }, 1000);
+  };
+
+  componentDidMount() {
+    this.getHourCountdown();
+  }
+
   render() {
     const {
       showAppointment,
@@ -135,6 +238,16 @@ export default class Home extends Component {
       showTemperature,
       showMood,
       showSymptom,
+      time,
+      days,
+      hours,
+      mins,
+      secs,
+      percentage,
+      log1,
+      log2,
+      log3,
+      log4,
     } = this.state;
     return (
       <>
@@ -176,7 +289,7 @@ export default class Home extends Component {
             <Text style={styles.heading}>Next Up</Text>
             <Text style={styles.subheading}>Meds</Text>
 
-            <View style={styles.medCard}>
+            <View style={{ ...styles.medCard, height: RF(200) }}>
               <View
                 style={{
                   alignItems: "flex-end",
@@ -191,6 +304,127 @@ export default class Home extends Component {
                 >
                   <Ionicons name="md-add" size={RF(30)} color="#FA4A0C" />
                 </TouchableOpacity>
+              </View>
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  position: "relative",
+                  height: RF(135),
+                }}
+              >
+                <SemiCircleProgress
+                  percentage={percentage}
+                  progressColor={"#ED4A10"}
+                ></SemiCircleProgress>
+                <View
+                  style={{
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "absolute",
+                    top: RF(40),
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: RF(14),
+                      fontWeight: "700",
+                      marginBottom: RF(2),
+                    }}
+                  >
+                    Time till
+                  </Text>
+                  <Image
+                    source={require("../assets/icons/actions/drugs.png")}
+                    style={{
+                      width: RF(65),
+                      height: RF(33),
+                      marginBottom: RF(5),
+                    }}
+                  />
+                  <Text
+                    style={{
+                      fontSize: RF(24),
+                      fontWeight: "700",
+                    }}
+                  >
+                    {`${hours} : ${mins} : ${secs}`}
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  onPress={() => this.onShowLog(1)}
+                  style={{
+                    position: "absolute",
+                    left: RF(80),
+                    bottom: RF(30),
+                    width: RF(20),
+                    height: RF(20),
+                    backgroundColor: "#ED4A10",
+                    borderRadius: "50%",
+                  }}
+                />
+                <TouchableOpacity
+                  onPress={() => this.onShowLog(4)}
+                  style={{
+                    position: "absolute",
+                    right: RF(80),
+                    bottom: RF(30),
+                    width: RF(20),
+                    height: RF(20),
+                    backgroundColor: "#E5E5E5",
+                    borderRadius: "50%",
+                    borderWidth: 1.5,
+                    borderColor: "#3F27D2",
+                  }}
+                />
+                <TouchableOpacity
+                  onPress={() => this.onShowLog(2)}
+                  style={{
+                    position: "absolute",
+                    left: RF(165),
+                    top: RF(-4),
+                    width: RF(20),
+                    height: RF(20),
+                    backgroundColor: "#E5E5E5",
+                    borderRadius: "50%",
+                    borderWidth: 1.5,
+                    borderColor: "#ED4A10",
+                  }}
+                />
+                <TouchableOpacity
+                  onPress={() => this.onShowLog(3)}
+                  style={{
+                    position: "absolute",
+                    right: RF(103),
+                    top: RF(30),
+                    width: RF(20),
+                    height: RF(20),
+                    backgroundColor: "#E5E5E5",
+                    borderRadius: "50%",
+                    borderWidth: 1.5,
+                    borderColor: "#3F27D2",
+                  }}
+                />
+                <Image
+                  source={require("../assets/icons/actions/day.png")}
+                  style={{
+                    position: "absolute",
+                    left: RF(80),
+                    bottom: RF(5),
+                    width: RF(20),
+                    height: RF(20),
+                  }}
+                />
+                <Image
+                  source={require("../assets/icons/actions/night.png")}
+                  style={{
+                    position: "absolute",
+                    right: RF(80),
+                    bottom: RF(5),
+                    width: RF(20),
+                    height: RF(20),
+                  }}
+                />
               </View>
             </View>
 
@@ -718,6 +952,12 @@ export default class Home extends Component {
             <View style={{ paddingBottom: RF(10) }} />
           </ScrollView>
         </View>
+
+        <Log1 modalVisible={log1} onHide={() => this.onHideLog(1)} />
+
+        <Log2 modalVisible={log2} onHide={() => this.onHideLog(2)} />
+        <Log3 modalVisible={log3} onHide={() => this.onHideLog(3)} />
+        <Log4 modalVisible={log4} onHide={() => this.onHideLog(4)} />
 
         <Appointment
           modalVisible={showAppointment}
