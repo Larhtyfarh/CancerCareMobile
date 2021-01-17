@@ -114,7 +114,7 @@ export default class Log extends Component {
                     />
                 </View>
 
-                <View style={{flexDirection: "row", marginBottom: RF(15), alignItems: "center", }}>
+                <View style={{flexDirection: "row", marginBottom: RF(10), alignItems: "center", }}>
                     <Text style={{fontSize: RF(20), fontWeight: "700", color: lightTheme.black, marginRight: RF(15)}}>Symptoms</Text>
 
                     <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddSymptoms")}}>
@@ -246,7 +246,7 @@ export default class Log extends Component {
 
 
 
-                <View style={{flexDirection: "row", marginBottom: RF(15), alignItems: "center", marginTop: RF(25), }}>
+                <View style={{flexDirection: "row", marginBottom: RF(15), alignItems: "center", marginTop: RF(10), }}>
                     <Text style={{fontSize: RF(20), fontWeight: "700", color: lightTheme.black, marginRight: RF(15)}}>Vitals</Text>
 
                     <TouchableOpacity onPress={() => {this.props.navigation.navigate("AddVitals")}}>
@@ -261,24 +261,24 @@ export default class Log extends Component {
 
                     <TouchableOpacity onPress={()=>this.onVitalsTabChange(1)} style={vittab === 1 ? Style.vitalBoxActive : Style.vitalBox}>
                             <Image style={{height: RF(40), width: RF(44), marginBottom: RF(10)}} source={require('../assets/images/heartRate.png')}/>
-                            <Text style={{fontSize: RF(15), fontWeight: "600", }}>Heart Rate</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", }}>Heart Rate</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={()=>this.onVitalsTabChange(2)} style={vittab === 2 ? Style.vitalBoxActive : Style.vitalBox}>
                         <Image style={{height: RF(40), width: RF(40), marginBottom: RF(10)}} source={require('../assets/images/weight.png')}/>
-                        <Text style={{fontSize: RF(15), fontWeight: "600", }}>Weight</Text>
+                        <Text style={{fontSize: RF(12), fontWeight: "600", }}>Weight</Text>
 
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={()=>this.onVitalsTabChange(3)} style={vittab === 3 ? Style.vitalBoxActive : Style.vitalBox}>
                         <Image style={{height: RF(40), width: RF(23), marginBottom: RF(10)}} source={require('../assets/images/bloodSugar.png')}/>
-                        <Text style={{fontSize: RF(15), fontWeight: "600", }}>Blood Sugar</Text>
+                        <Text style={{fontSize: RF(12), fontWeight: "600", }}>Blood Sugar</Text>
 
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={()=>this.onVitalsTabChange(4)} style={vittab === 4 ? Style.vitalBoxActive : Style.vitalBox}>
                         <Image style={{height: RF(40), width: RF(18), marginBottom: RF(10)}} source={require('../assets/images/temperature.png')}/>
-                        <Text style={{fontSize: RF(15), fontWeight: "600", }}>Temperature</Text>
+                        <Text style={{fontSize: RF(12), fontWeight: "600", }}>Temperature</Text>
 
                     </TouchableOpacity>
 
@@ -371,13 +371,13 @@ export default class Log extends Component {
 
 
 
-                <Text style={{fontSize: RF(20), fontWeight: "700", color: lightTheme.black, marginBottom: RF(15), marginTop: RF(25),}}>Notes</Text>
+                <Text style={{fontSize: RF(20), fontWeight: "700", color: lightTheme.black, marginBottom: RF(10), marginTop: RF(15),}}>Notes</Text>
 
         
                 <View style={{height: RF(165), flexDirection: "column", alignItems: "center", justifyContent: "center",  }}>
 
-                        <Image style={{height: RF(50), width: RF(55), marginBottom:RF(15)}} source={require('../assets/images/notes.png')}/>
-                        <TextInput style={{fontSize: RF(20), color: lightTheme.grey, borderColor: "#f2f2f2", borderWidth: 1, }} clearButtonMode="while-editing" placeholder="Tap here to add a note" />
+                        <Image style={{height: RF(40), width: RF(44), marginBottom:RF(10)}} source={require('../assets/images/notes.png')}/>
+                        <TextInput style={{fontSize: RF(16), color: lightTheme.grey, borderColor: "#f2f2f2", borderWidth: 1, }} clearButtonMode="while-editing" placeholder="Tap here to add a note" />
 
                 </View>
 
