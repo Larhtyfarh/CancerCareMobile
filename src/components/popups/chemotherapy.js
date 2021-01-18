@@ -8,6 +8,7 @@ import {
   Image,
   Linking,
   Dimensions,
+  Platform,
 } from "react-native";
 import { lightTheme } from "../../styles/colors";
 import RF from "../../utils/RF";

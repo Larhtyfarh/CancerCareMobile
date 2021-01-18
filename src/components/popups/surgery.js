@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Image,
   Linking,
+  Platform,
 } from "react-native";
 import { lightTheme } from "../../styles/colors";
 import RF from "../../utils/RF";
