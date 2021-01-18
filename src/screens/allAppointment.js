@@ -89,7 +89,7 @@ export default class allAppointment extends Component {
             <View
               style={{
                 width: "100%",
-                height: RF(100),
+                height: RF(110),
                 backgroundColor: lightTheme.white,
                 borderRadius: RF(10),
                 elevation: 2,
@@ -140,7 +140,7 @@ export default class allAppointment extends Component {
                   <View style={{ flexDirection: "row" }}>
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.peach,
                         borderRadius: RF(10),
@@ -162,7 +162,7 @@ export default class allAppointment extends Component {
 
                     <View
                       style={{
-                        width: RF(120),
+                        width: RF(140),
                         height: RF(20),
                         backgroundColor: lightTheme.lilac,
                         borderRadius: RF(10),
@@ -190,7 +190,7 @@ export default class allAppointment extends Component {
             <View
               style={{
                 width: "100%",
-                height: RF(100),
+                height: RF(110),
                 backgroundColor: lightTheme.white,
                 borderRadius: RF(10),
                 elevation: 2,
@@ -241,7 +241,7 @@ export default class allAppointment extends Component {
                   <View style={{ flexDirection: "row" }}>
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.peach,
                         borderRadius: RF(10),
@@ -263,7 +263,7 @@ export default class allAppointment extends Component {
 
                     <View
                       style={{
-                        width: RF(110),
+                        width: RF(140),
                         height: RF(20),
                         backgroundColor: lightTheme.lilac,
                         borderRadius: RF(10),

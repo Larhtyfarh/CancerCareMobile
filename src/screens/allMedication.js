@@ -100,7 +100,7 @@ export default class allMedication extends Component {
             <View
               style={{
                 width: "100%",
-                height: RF(80),
+                height: RF(90),
                 backgroundColor: lightTheme.white,
                 borderRadius: RF(10),
                 elevation: 2,
@@ -137,7 +137,7 @@ export default class allMedication extends Component {
                   <View style={{ flexDirection: "row" }}>
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.peach,
                         borderRadius: RF(10),
@@ -159,7 +159,7 @@ export default class allMedication extends Component {
 
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.lilac,
                         borderRadius: RF(10),
@@ -187,7 +187,7 @@ export default class allMedication extends Component {
             <View
               style={{
                 width: "100%",
-                height: RF(80),
+                height: RF(90),
                 backgroundColor: lightTheme.white,
                 borderRadius: RF(10),
                 elevation: 2,
@@ -224,7 +224,7 @@ export default class allMedication extends Component {
                   <View style={{ flexDirection: "row" }}>
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.peach,
                         borderRadius: RF(10),
@@ -246,7 +246,7 @@ export default class allMedication extends Component {
 
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.lilac,
                         borderRadius: RF(10),
@@ -274,7 +274,7 @@ export default class allMedication extends Component {
             <View
               style={{
                 width: "100%",
-                height: RF(80),
+                height: RF(90),
                 backgroundColor: lightTheme.white,
                 borderRadius: RF(10),
                 elevation: 2,
@@ -311,7 +311,7 @@ export default class allMedication extends Component {
                   <View style={{ flexDirection: "row" }}>
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.peach,
                         borderRadius: RF(10),
@@ -333,7 +333,7 @@ export default class allMedication extends Component {
 
                     <View
                       style={{
-                        width: RF(60),
+                        width: RF(65),
                         height: RF(20),
                         backgroundColor: lightTheme.lilac,
                         borderRadius: RF(10),

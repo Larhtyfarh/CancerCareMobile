@@ -9,7 +9,6 @@ import {
   Linking,
 } from "react-native";
 import { mainStyle } from "../styles/main";
-import Camera from "react-native-camera";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import { Ionicons } from "@expo/vector-icons";
 import { Icons } from "react-native-vector-icons";

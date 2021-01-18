@@ -227,7 +227,7 @@ export default class Calendar extends Component {
                       />
                       <Text
                         style={{
-                          fontSize: RF(15),
+                          fontSize: RF(12),
                           fontWeight: "700",
                           color: lightTheme.orange,
                         }}
@@ -268,7 +268,7 @@ export default class Calendar extends Component {
                       />
                       <Text
                         style={{
-                          fontSize: RF(15),
+                          fontSize: RF(11),
                           fontWeight: "700",
                           color: lightTheme.orange,
                         }}
@@ -309,7 +309,7 @@ export default class Calendar extends Component {
                       />
                       <Text
                         style={{
-                          fontSize: RF(15),
+                          fontSize: RF(12),
                           fontWeight: "700",
                           color: lightTheme.orange,
                         }}
@@ -350,7 +350,7 @@ export default class Calendar extends Component {
                       />
                       <Text
                         style={{
-                          fontSize: RF(15),
+                          fontSize: RF(12),
                           fontWeight: "700",
                           color: lightTheme.orange,
                         }}
@@ -519,12 +519,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 1
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -585,12 +585,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 2
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -651,12 +651,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 3
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -717,12 +717,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 4
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -783,12 +783,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 5
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -849,12 +849,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 6
                             ? {
-                                fontSize: RF(18),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(18),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -915,12 +915,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 7
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -981,12 +981,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 8
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -1047,12 +1047,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 9
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -1113,12 +1113,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 10
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -1179,12 +1179,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 11
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -1245,12 +1245,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 12
                             ? {
-                                fontSize: RF(18),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(18),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -1311,12 +1311,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 13
                             ? {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(20),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -1377,12 +1377,12 @@ export default class Calendar extends Component {
                         style={
                           datetab === 14
                             ? {
-                                fontSize: RF(18),
+                                fontSize: RF(15),
                                 color: lightTheme.white,
                                 fontWeight: "600",
                               }
                             : {
-                                fontSize: RF(18),
+                                fontSize: RF(15),
                                 color: lightTheme.grey,
                                 fontWeight: "600",
                               }
@@ -1424,7 +1424,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -1434,12 +1434,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Amoxyl
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1456,12 +1456,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Paracetamol
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1478,12 +1478,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Ciplox
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1508,7 +1508,7 @@ export default class Calendar extends Component {
 
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.lilac,
                           borderRadius: RF(10),
@@ -1583,7 +1583,7 @@ export default class Calendar extends Component {
                         style={{
                           flexDirection: "row",
                           justifyContent: "space-between",
-                          marginBottom: RF(12),
+                          marginBottom: RF(8),
                         }}
                       >
                         <View style={{ flexDirection: "row" }}>
@@ -1594,13 +1594,13 @@ export default class Calendar extends Component {
 
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
-                              style={{ fontSize: RF(14), fontWeight: "700" }}
+                              style={{ fontSize: RF(12), fontWeight: "700" }}
                             >
                               Amoxyl
                             </Text>
                             <Text
                               style={{
-                                fontSize: RF(16),
+                                fontSize: RF(14),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
@@ -1618,13 +1618,13 @@ export default class Calendar extends Component {
 
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
-                              style={{ fontSize: RF(14), fontWeight: "700" }}
+                              style={{ fontSize: RF(12), fontWeight: "700" }}
                             >
                               Paracetamol
                             </Text>
                             <Text
                               style={{
-                                fontSize: RF(16),
+                                fontSize: RF(14),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
@@ -1642,13 +1642,13 @@ export default class Calendar extends Component {
 
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
-                              style={{ fontSize: RF(14), fontWeight: "700" }}
+                              style={{ fontSize: RF(12), fontWeight: "700" }}
                             >
                               Ciplox
                             </Text>
                             <Text
                               style={{
-                                fontSize: RF(16),
+                                fontSize: RF(14),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
@@ -1667,7 +1667,7 @@ export default class Calendar extends Component {
                       >
                         <View
                           style={{
-                            width: RF(45),
+                            width: RF(50),
                             height: RF(15),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -1708,7 +1708,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -1718,12 +1718,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Ciplox
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1742,7 +1742,7 @@ export default class Calendar extends Component {
                     >
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.peach,
                           borderRadius: RF(10),
@@ -1782,7 +1782,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -1792,12 +1792,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Amoxyl
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1816,7 +1816,7 @@ export default class Calendar extends Component {
                     >
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.peach,
                           borderRadius: RF(10),
@@ -1868,7 +1868,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -1878,12 +1878,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Fatigue
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1900,12 +1900,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Nausea
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1922,12 +1922,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Headache
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -1952,7 +1952,7 @@ export default class Calendar extends Component {
 
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.lilac,
                           borderRadius: RF(10),
@@ -2012,7 +2012,7 @@ export default class Calendar extends Component {
                         style={{
                           flexDirection: "row",
                           justifyContent: "space-between",
-                          marginBottom: RF(12),
+                          marginBottom: RF(8),
                         }}
                       >
                         <View style={{ flexDirection: "row" }}>
@@ -2023,13 +2023,13 @@ export default class Calendar extends Component {
 
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
-                              style={{ fontSize: RF(14), fontWeight: "700" }}
+                              style={{ fontSize: RF(12), fontWeight: "700" }}
                             >
                               Fatigue
                             </Text>
                             <Text
                               style={{
-                                fontSize: RF(16),
+                                fontSize: RF(14),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
@@ -2047,13 +2047,13 @@ export default class Calendar extends Component {
 
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
-                              style={{ fontSize: RF(14), fontWeight: "700" }}
+                              style={{ fontSize: RF(12), fontWeight: "700" }}
                             >
                               Nausea
                             </Text>
                             <Text
                               style={{
-                                fontSize: RF(16),
+                                fontSize: RF(14),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
@@ -2071,13 +2071,13 @@ export default class Calendar extends Component {
 
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
-                              style={{ fontSize: RF(14), fontWeight: "700" }}
+                              style={{ fontSize: RF(12), fontWeight: "700" }}
                             >
                               Headache
                             </Text>
                             <Text
                               style={{
-                                fontSize: RF(16),
+                                fontSize: RF(14),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
@@ -2096,7 +2096,7 @@ export default class Calendar extends Component {
                       >
                         <View
                           style={{
-                            width: RF(45),
+                            width: RF(50),
                             height: RF(15),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -2137,7 +2137,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -2147,12 +2147,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Fatigue
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -2169,12 +2169,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Nausea
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -2191,12 +2191,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(14), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
                             Headache
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -2215,7 +2215,7 @@ export default class Calendar extends Component {
                     >
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.peach,
                           borderRadius: RF(10),
@@ -2267,7 +2267,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -2277,12 +2277,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(18), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(16), fontWeight: "700" }}>
                             Mood
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -2307,7 +2307,7 @@ export default class Calendar extends Component {
 
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.lilac,
                           borderRadius: RF(10),
@@ -2382,7 +2382,7 @@ export default class Calendar extends Component {
                         style={{
                           flexDirection: "row",
                           justifyContent: "space-between",
-                          marginBottom: RF(12),
+                          marginBottom: RF(8),
                         }}
                       >
                         <View style={{ flexDirection: "row" }}>
@@ -2393,13 +2393,13 @@ export default class Calendar extends Component {
 
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
-                              style={{ fontSize: RF(18), fontWeight: "700" }}
+                              style={{ fontSize: RF(16), fontWeight: "700" }}
                             >
                               Mood
                             </Text>
                             <Text
                               style={{
-                                fontSize: RF(16),
+                                fontSize: RF(14),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
@@ -2418,7 +2418,7 @@ export default class Calendar extends Component {
                       >
                         <View
                           style={{
-                            width: RF(45),
+                            width: RF(50),
                             height: RF(15),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -2459,7 +2459,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -2469,12 +2469,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(18), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(16), fontWeight: "700" }}>
                             Mood
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -2493,7 +2493,7 @@ export default class Calendar extends Component {
                     >
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.lilac,
                           borderRadius: RF(10),
@@ -2533,7 +2533,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -2543,12 +2543,12 @@ export default class Calendar extends Component {
                         />
 
                         <View style={{ paddingHorizontal: RF(10) }}>
-                          <Text style={{ fontSize: RF(18), fontWeight: "700" }}>
+                          <Text style={{ fontSize: RF(16), fontWeight: "700" }}>
                             Mood
                           </Text>
                           <Text
                             style={{
-                              fontSize: RF(16),
+                              fontSize: RF(14),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
@@ -2567,7 +2567,7 @@ export default class Calendar extends Component {
                     >
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.peach,
                           borderRadius: RF(10),
@@ -2619,7 +2619,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -2631,12 +2631,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            77<Text style={{ fontSize: RF(14) }}>BPM</Text>
+                            77<Text style={{ fontSize: RF(12) }}>BPM</Text>
                           </Text>
                         </View>
                       </View>
@@ -2650,12 +2650,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            60<Text style={{ fontSize: RF(14) }}>kg</Text>
+                            60<Text style={{ fontSize: RF(12) }}>kg</Text>
                           </Text>
                         </View>
                       </View>
@@ -2669,12 +2669,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            35<Text style={{ fontSize: RF(14) }}>mg/dL</Text>
+                            35<Text style={{ fontSize: RF(12) }}>mg/dL</Text>
                           </Text>
                         </View>
                       </View>
@@ -2688,12 +2688,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            32<Text style={{ fontSize: RF(14) }}>C</Text>
+                            32<Text style={{ fontSize: RF(12) }}>C</Text>
                           </Text>
                         </View>
                       </View>
@@ -2713,7 +2713,7 @@ export default class Calendar extends Component {
 
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.lilac,
                           borderRadius: RF(10),
@@ -2773,7 +2773,7 @@ export default class Calendar extends Component {
                         style={{
                           flexDirection: "row",
                           justifyContent: "space-between",
-                          marginBottom: RF(12),
+                          marginBottom: RF(8),
                         }}
                       >
                         <View style={{ flexDirection: "row" }}>
@@ -2785,12 +2785,12 @@ export default class Calendar extends Component {
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
                               style={{
-                                fontSize: RF(24),
+                                fontSize: RF(22),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
                             >
-                              77<Text style={{ fontSize: RF(14) }}>BPM</Text>
+                              77<Text style={{ fontSize: RF(12) }}>BPM</Text>
                             </Text>
                           </View>
                         </View>
@@ -2804,12 +2804,12 @@ export default class Calendar extends Component {
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
                               style={{
-                                fontSize: RF(24),
+                                fontSize: RF(22),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
                             >
-                              60<Text style={{ fontSize: RF(14) }}>kg</Text>
+                              60<Text style={{ fontSize: RF(12) }}>kg</Text>
                             </Text>
                           </View>
                         </View>
@@ -2823,12 +2823,12 @@ export default class Calendar extends Component {
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
                               style={{
-                                fontSize: RF(24),
+                                fontSize: RF(22),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
                             >
-                              35<Text style={{ fontSize: RF(14) }}>mg/dL</Text>
+                              35<Text style={{ fontSize: RF(12) }}>mg/dL</Text>
                             </Text>
                           </View>
                         </View>
@@ -2842,12 +2842,12 @@ export default class Calendar extends Component {
                           <View style={{ paddingHorizontal: RF(10) }}>
                             <Text
                               style={{
-                                fontSize: RF(24),
+                                fontSize: RF(22),
                                 fontWeight: "700",
                                 color: lightTheme.orange,
                               }}
                             >
-                              32<Text style={{ fontSize: RF(14) }}>C</Text>
+                              32<Text style={{ fontSize: RF(12) }}>C</Text>
                             </Text>
                           </View>
                         </View>
@@ -2861,7 +2861,7 @@ export default class Calendar extends Component {
                       >
                         <View
                           style={{
-                            width: RF(45),
+                            width: RF(50),
                             height: RF(15),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -2903,7 +2903,7 @@ export default class Calendar extends Component {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: RF(12),
+                        marginBottom: RF(8),
                       }}
                     >
                       <View style={{ flexDirection: "row" }}>
@@ -2915,12 +2915,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            82<Text style={{ fontSize: RF(14) }}>BPM</Text>
+                            82<Text style={{ fontSize: RF(12) }}>BPM</Text>
                           </Text>
                         </View>
                       </View>
@@ -2934,12 +2934,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            59<Text style={{ fontSize: RF(14) }}>kg</Text>
+                            59<Text style={{ fontSize: RF(12) }}>kg</Text>
                           </Text>
                         </View>
                       </View>
@@ -2953,12 +2953,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            32<Text style={{ fontSize: RF(14) }}>mg/dL</Text>
+                            32<Text style={{ fontSize: RF(12) }}>mg/dL</Text>
                           </Text>
                         </View>
                       </View>
@@ -2972,12 +2972,12 @@ export default class Calendar extends Component {
                         <View style={{ paddingHorizontal: RF(10) }}>
                           <Text
                             style={{
-                              fontSize: RF(24),
+                              fontSize: RF(22),
                               fontWeight: "700",
                               color: lightTheme.orange,
                             }}
                           >
-                            33<Text style={{ fontSize: RF(14) }}>C</Text>
+                            33<Text style={{ fontSize: RF(12) }}>C</Text>
                           </Text>
                         </View>
                       </View>
@@ -2991,7 +2991,7 @@ export default class Calendar extends Component {
                     >
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.lilac,
                           borderRadius: RF(10),
@@ -3018,7 +3018,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(70),
+                    height: RF(80),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3041,19 +3041,19 @@ export default class Calendar extends Component {
                       <View style={{ paddingHorizontal: RF(15) }}>
                         <Text
                           style={{
-                            fontSize: RF(18),
+                            fontSize: RF(16),
                             fontWeight: "700",
                             color: lightTheme.orange,
                           }}
                         >
                           Chemoterapy
                         </Text>
-                        <Text style={{ fontSize: RF(14), fontWeight: "600" }}>
+                        <Text style={{ fontSize: RF(12), fontWeight: "600" }}>
                           Dr. Tim
                         </Text>
                         <Text
                           style={{
-                            fontSize: RF(12),
+                            fontSize: RF(10),
                             fontWeight: "600",
                             color: lightTheme.grey,
                           }}
@@ -3071,7 +3071,7 @@ export default class Calendar extends Component {
                     >
                       <View
                         style={{
-                          width: RF(100),
+                          width: RF(120),
                           height: RF(15),
                           backgroundColor: lightTheme.peach,
                           borderRadius: RF(10),
@@ -3089,7 +3089,7 @@ export default class Calendar extends Component {
 
                       <View
                         style={{
-                          width: RF(45),
+                          width: RF(50),
                           height: RF(15),
                           backgroundColor: lightTheme.lilac,
                           borderRadius: RF(10),
@@ -3155,7 +3155,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(80),
+                    height: RF(90),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3175,7 +3175,7 @@ export default class Calendar extends Component {
                     />
 
                     <View style={{ paddingHorizontal: RF(20) }}>
-                      <Text style={{ fontSize: RF(24), fontWeight: "700" }}>
+                      <Text style={{ fontSize: RF(22), fontWeight: "700" }}>
                         Amoxyl
                       </Text>
                       <Text
@@ -3192,7 +3192,7 @@ export default class Calendar extends Component {
                       <View style={{ flexDirection: "row" }}>
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.peach,
                             borderRadius: RF(10),
@@ -3214,7 +3214,7 @@ export default class Calendar extends Component {
 
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -3242,7 +3242,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(80),
+                    height: RF(90),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3262,7 +3262,7 @@ export default class Calendar extends Component {
                     />
 
                     <View style={{ paddingHorizontal: RF(20) }}>
-                      <Text style={{ fontSize: RF(24), fontWeight: "700" }}>
+                      <Text style={{ fontSize: RF(22), fontWeight: "700" }}>
                         Paracetamol
                       </Text>
                       <Text
@@ -3279,7 +3279,7 @@ export default class Calendar extends Component {
                       <View style={{ flexDirection: "row" }}>
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.peach,
                             borderRadius: RF(10),
@@ -3301,7 +3301,7 @@ export default class Calendar extends Component {
 
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -3329,7 +3329,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(80),
+                    height: RF(90),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3349,7 +3349,7 @@ export default class Calendar extends Component {
                     />
 
                     <View style={{ paddingHorizontal: RF(20) }}>
-                      <Text style={{ fontSize: RF(24), fontWeight: "700" }}>
+                      <Text style={{ fontSize: RF(22), fontWeight: "700" }}>
                         Ciplox
                       </Text>
                       <Text
@@ -3366,7 +3366,7 @@ export default class Calendar extends Component {
                       <View style={{ flexDirection: "row" }}>
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.peach,
                             borderRadius: RF(10),
@@ -3388,7 +3388,7 @@ export default class Calendar extends Component {
 
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -3410,7 +3410,7 @@ export default class Calendar extends Component {
 
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -3475,7 +3475,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(100),
+                    height: RF(110),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3526,7 +3526,7 @@ export default class Calendar extends Component {
                       <View style={{ flexDirection: "row" }}>
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.peach,
                             borderRadius: RF(10),
@@ -3548,7 +3548,7 @@ export default class Calendar extends Component {
 
                         <View
                           style={{
-                            width: RF(120),
+                            width: RF(140),
                             height: RF(20),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -3576,7 +3576,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(100),
+                    height: RF(110),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3627,7 +3627,7 @@ export default class Calendar extends Component {
                       <View style={{ flexDirection: "row" }}>
                         <View
                           style={{
-                            width: RF(60),
+                            width: RF(65),
                             height: RF(20),
                             backgroundColor: lightTheme.peach,
                             borderRadius: RF(10),
@@ -3649,7 +3649,7 @@ export default class Calendar extends Component {
 
                         <View
                           style={{
-                            width: RF(110),
+                            width: RF(140),
                             height: RF(20),
                             backgroundColor: lightTheme.lilac,
                             borderRadius: RF(10),
@@ -3714,7 +3714,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(90),
+                    height: RF(100),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3736,14 +3736,14 @@ export default class Calendar extends Component {
                     <View style={{ paddingHorizontal: RF(20) }}>
                       <Text
                         style={{
-                          fontSize: RF(22),
+                          fontSize: RF(20),
                           fontWeight: "600",
                           marginBottom: RF(5),
                         }}
                       >
                         Reaction to Ciplox
                       </Text>
-                      <Text style={{ fontSize: RF(15), marginBottom: RF(5) }}>
+                      <Text style={{ fontSize: RF(13), marginBottom: RF(5) }}>
                         I have noticed a severe headache and rashes whenever i
                         use the Ciplox drops, whenev...
                       </Text>
@@ -3767,7 +3767,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(100),
+                    height: RF(110),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3789,14 +3789,14 @@ export default class Calendar extends Component {
                     <View style={{ paddingHorizontal: RF(20) }}>
                       <Text
                         style={{
-                          fontSize: RF(22),
+                          fontSize: RF(20),
                           fontWeight: "600",
                           marginBottom: RF(5),
                         }}
                       >
                         Severe Fatigue
                       </Text>
-                      <Text style={{ fontSize: RF(15), marginBottom: RF(5) }}>
+                      <Text style={{ fontSize: RF(13), marginBottom: RF(5) }}>
                         My Fatigue level has gotten severe in the last couple of
                         days, I’m unsure what the caus...
                       </Text>
@@ -3820,7 +3820,7 @@ export default class Calendar extends Component {
                 <View
                   style={{
                     width: "100%",
-                    height: RF(100),
+                    height: RF(110),
                     backgroundColor: lightTheme.white,
                     borderRadius: RF(10),
                     elevation: 2,
@@ -3842,14 +3842,14 @@ export default class Calendar extends Component {
                     <View style={{ paddingHorizontal: RF(20) }}>
                       <Text
                         style={{
-                          fontSize: RF(22),
+                          fontSize: RF(20),
                           fontWeight: "600",
                           marginBottom: RF(5),
                         }}
                       >
                         A good day
                       </Text>
-                      <Text style={{ fontSize: RF(15), marginBottom: RF(5) }}>
+                      <Text style={{ fontSize: RF(13), marginBottom: RF(5) }}>
                         I've had a good day today.
                       </Text>
                       <Text

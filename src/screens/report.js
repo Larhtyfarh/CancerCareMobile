@@ -135,30 +135,30 @@ export default class Report extends Component {
 
                                 <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>120</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>80</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(10)}}>80</Text>
 
                             </View>
 
                             <View>
 
-                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10) }} source={require('../assets/images/heartRateGraph.png')}/>
+                                <Image style={{width: RF(230), height: RF(120), marginTop: RF(8) }} source={require('../assets/images/heartRateGraph.png')}/>
 
                             </View>
 
                         </View>
                         
 
-                        <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between", }}>
+                        <View style={{flexDirection: "row", paddingHorizontal: RF(50), justifyContent: "space-between", }}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>16:00</Text>
 
                         </View>
 
@@ -204,13 +204,13 @@ export default class Report extends Component {
 
                                 <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>40</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>20</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(10)}}>20</Text>
 
                             </View>
 
                             <View>
 
-                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10) }} source={require('../assets/images/weightGraph.png')}/>
+                                <Image style={{width: RF(240), height: RF(115), marginTop: RF(10) }} source={require('../assets/images/weightGraph.png')}/>
 
                             </View>
 
@@ -218,15 +218,15 @@ export default class Report extends Component {
 
                         <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between",}}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>16:00</Text>
 
                         </View>
 
@@ -271,13 +271,13 @@ export default class Report extends Component {
 
                                 <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>120</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>80</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(10)}}>80</Text>
 
                             </View>
 
                             <View>
 
-                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10)}} source={require('../assets/images/bloodSugarGraph.png')}/>
+                                <Image style={{width: RF(240), height: RF(125), marginTop: RF(10)}} source={require('../assets/images/bloodSugarGraph.png')}/>
 
                             </View>
 
@@ -285,15 +285,15 @@ export default class Report extends Component {
 
                         <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between",}}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>16:00</Text>
 
                         </View>
 
@@ -338,13 +338,13 @@ export default class Report extends Component {
 
                                 <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>25</Text>
 
-                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(20)}}>20</Text>
+                                <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginBottom: RF(10)}}>20</Text>
 
                             </View>
 
                             <View>
 
-                                <Image style={{width: RF(230), height: RF(110), marginHorizontal: RF(10)}} source={require('../assets/images/heartRateGraph.png')}/>
+                                <Image style={{width: RF(240), height: RF(125), marginTop: RF(10)}} source={require('../assets/images/heartRateGraph.png')}/>
 
                             </View>
 
@@ -352,15 +352,15 @@ export default class Report extends Component {
 
                         <View style={{flexDirection: "row", paddingHorizontal: RF(60), justifyContent: "space-between",}}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>16:00</Text>
 
                         </View>
 
@@ -410,15 +410,15 @@ export default class Report extends Component {
 
                                 <View style={{}}>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unbearable</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unbearable</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Severe</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Severe</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Moderate</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Moderate</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Mild</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Mild</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>None</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(10)}}>None</Text>
 
                                 </View>
 
@@ -426,7 +426,7 @@ export default class Report extends Component {
 
                             <View>
 
-                                <Image style={{width: RF(240), height: RF(125), marginHorizontal: RF(25), }} source={require('../assets/images/fatigueGraph.png')}/>
+                                <Image style={{width: RF(220), height: RF(120), marginTop: RF(10), marginLeft: RF(20) }} source={require('../assets/images/fatigueGraph.png')}/>
 
                             </View>
 
@@ -434,15 +434,15 @@ export default class Report extends Component {
 
                         <View style={{flexDirection: "row", paddingHorizontal: RF(90), justifyContent: "space-between", }}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>08:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>10:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>12:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>14:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>16:00</Text>
 
                         </View>
 
@@ -484,15 +484,15 @@ export default class Report extends Component {
 
                                 <View style={{}}>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unbearable</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unbearable</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Severe</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Severe</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Moderate</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Moderate</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Mild</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Mild</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>None</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(10)}}>None</Text>
 
                                 </View>
 
@@ -500,7 +500,7 @@ export default class Report extends Component {
 
                             <View>
 
-                                <Image style={{width: RF(240), height: RF(125), marginHorizontal: RF(25)}} source={require('../assets/images/nauseaGraph.png')}/>
+                                <Image style={{width: RF(235), height: RF(120), marginTop: RF(10), marginLeft: RF(20)}} source={require('../assets/images/nauseaGraph.png')}/>
 
                             </View>
 
@@ -508,15 +508,15 @@ export default class Report extends Component {
 
                         <View style={{flexDirection: "row", paddingHorizontal: RF(90), justifyContent: "space-between", }}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>08:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>10:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>12:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>14:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>16:00</Text>
 
                         </View>
 
@@ -557,15 +557,15 @@ export default class Report extends Component {
 
                                 <View style={{}}>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Unbearable</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unbearable</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Severe</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Severe</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Moderate</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Moderate</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>Mild</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Mild</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(15)}}>None</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>None</Text>
 
                                 </View>
 
@@ -573,7 +573,7 @@ export default class Report extends Component {
 
                             <View>
 
-                                <Image style={{width: RF(240), height: RF(125), marginHorizontal: RF(25)}} source={require('../assets/images/headacheGraph.png')}/>
+                                <Image style={{width: RF(235), height: RF(125), marginTop: RF(10), marginLeft: RF(20)}} source={require('../assets/images/headacheGraph.png')}/>
 
                             </View>
 
@@ -581,15 +581,15 @@ export default class Report extends Component {
 
                         <View style={{flexDirection: "row", paddingHorizontal: RF(90), justifyContent: "space-between", }}>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>08:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>10:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>12:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>14:00</Text>
 
-                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>16:00</Text>
 
                         </View>
 
@@ -639,15 +639,15 @@ export default class Report extends Component {
 
                                         <View style={{}}>
 
-                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Excited</Text>
+                                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Excited</Text>
 
-                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Happy</Text>
+                                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Happy</Text>
 
-                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Neutral</Text>
+                                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Neutral</Text>
 
-                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Sad</Text>
+                                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Sad</Text>
 
-                                            <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unhappy</Text>
+                                            <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, alignSelf: "flex-end", marginBottom: RF(14)}}>Unhappy</Text>
 
                                         </View>
 
@@ -655,7 +655,7 @@ export default class Report extends Component {
 
                                     <View>
 
-                                        <Image style={{width: RF(240), height: RF(120), marginHorizontal: RF(25) }} source={require('../assets/images/moodGraph.png')}/>
+                                        <Image style={{width: RF(240), height: RF(120), marginTop: RF(10), marginLeft: RF(20)}} source={require('../assets/images/moodGraph.png')}/>
 
                                     </View>
 
@@ -663,15 +663,15 @@ export default class Report extends Component {
 
                                 <View style={{flexDirection: "row", paddingHorizontal: RF(70), justifyContent: "space-between", }}>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>08:00</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>08:00</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>10:00</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>10:00</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>12:00</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>12:00</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>14:00</Text>
 
-                                    <Text style={{fontSize: RF(14), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(22)}}>14:00</Text>
+                                    <Text style={{fontSize: RF(12), fontWeight: "600", color: lightTheme.grey, marginLeft: RF(16)}}>16:00</Text>
 
                                 </View>
 

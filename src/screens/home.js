@@ -155,7 +155,8 @@ export default class Home extends Component {
     let currentSeconds = new Date().getSeconds();
     let seconds = (currentHour - 7) * 3600;
     if (currentHour === 7 || currentHour < 13) {
-      this.setState({
+      this.setState(
+        {
           time: moment.duration().add({
             days: 0,
             hours: 12 - currentHour,
@@ -163,9 +164,11 @@ export default class Home extends Component {
             seconds: 60 - currentSeconds,
           }),
           percentage: (seconds / 46800) * 100,
-      },() => {
+        },
+        () => {
           this.updateTimer();
-      });
+        }
+      );
     } else if (currentHour === 13 || currentHour < 17) {
       this.setState(
         {
@@ -196,9 +199,8 @@ export default class Home extends Component {
           this.updateTimer();
         }
       );
-  }else if (currentHour >= 21) {
-    alert("I'm here")
-    this.setState({
+    } else if (currentHour >= 21) {
+      this.setState({
         time: moment.duration().add({
           days: 0,
           hours: 0,
@@ -206,9 +208,9 @@ export default class Home extends Component {
           seconds: 0,
         }),
         percentage: 0,
-    });
-  }else {
-    this.setState({
+      });
+    } else {
+      this.setState({
         time: moment.duration().add({
           days: 0,
           hours: 0,
@@ -216,9 +218,9 @@ export default class Home extends Component {
           seconds: 0,
         }),
         percentage: 0,
-    });
-  }
-};
+      });
+    }
+  };
 
   updateTimer = () => {
     const x = setInterval(() => {
@@ -373,8 +375,8 @@ export default class Home extends Component {
                   onPress={() => this.onShowLog(1)}
                   style={{
                     position: "absolute",
-                    left: RF(80),
-                    bottom: RF(30),
+                    left: RF(72),
+                    bottom: RF(22),
                     width: RF(20),
                     height: RF(20),
                     backgroundColor: "#ED4A10",
@@ -385,8 +387,8 @@ export default class Home extends Component {
                   onPress={() => this.onShowLog(4)}
                   style={{
                     position: "absolute",
-                    right: RF(80),
-                    bottom: RF(30),
+                    right: RF(72),
+                    bottom: RF(22),
                     width: RF(20),
                     height: RF(20),
                     backgroundColor: "#E5E5E5",
@@ -413,7 +415,7 @@ export default class Home extends Component {
                   onPress={() => this.onShowLog(3)}
                   style={{
                     position: "absolute",
-                    right: RF(103),
+                    right: RF(100),
                     top: RF(30),
                     width: RF(20),
                     height: RF(20),
@@ -427,8 +429,8 @@ export default class Home extends Component {
                   source={require("../assets/icons/actions/day.png")}
                   style={{
                     position: "absolute",
-                    left: RF(80),
-                    bottom: RF(5),
+                    left: RF(70),
+                    bottom: RF(2),
                     width: RF(20),
                     height: RF(20),
                   }}
@@ -437,10 +439,10 @@ export default class Home extends Component {
                   source={require("../assets/icons/actions/night.png")}
                   style={{
                     position: "absolute",
-                    right: RF(80),
-                    bottom: RF(5),
-                    width: RF(20),
-                    height: RF(20),
+                    right: RF(70),
+                    bottom: RF(2),
+                    width: RF(18),
+                    height: RF(18),
                   }}
                 />
               </View>
@@ -696,7 +698,7 @@ export default class Home extends Component {
                     />
                     <Text style={styles.vitalsLabel}>Heart Rate</Text>
                     <Text style={styles.vitalsValue}>
-                      77{" "}
+                      77
                       <Text style={{ fontSize: RF(14), fontWeight: "600" }}>
                         BPM
                       </Text>
@@ -712,7 +714,7 @@ export default class Home extends Component {
                     />
                     <Text style={styles.vitalsLabel}>Weight</Text>
                     <Text style={styles.vitalsValue}>
-                      60{" "}
+                      60
                       <Text style={{ fontSize: RF(14), fontWeight: "600" }}>
                         kg
                       </Text>
@@ -727,10 +729,10 @@ export default class Home extends Component {
                       style={styles.vitalsImage}
                       resizeMode="contain"
                     />
-                    <Text style={styles.vitalsLabel}>Blood Sugar</Text>
-                    <Text style={styles.vitalsValue}>
-                      35{" "}
-                      <Text style={{ fontSize: RF(12), fontWeight: "700" }}>
+                    <Text style={styles.vitalsLabelSmall}>Blood Sugar</Text>
+                    <Text style={styles.vitalsValueSmall}>
+                      35
+                      <Text style={{ fontSize: RF(10), fontWeight: "700" }}>
                         mg/dL
                       </Text>
                     </Text>
@@ -744,11 +746,10 @@ export default class Home extends Component {
                       style={styles.vitalsImage}
                       resizeMode="contain"
                     />
-                    <Text style={styles.vitalsLabel}>Temperature</Text>
-                    <Text style={styles.vitalsValue}>
-                      32{" "}
+                    <Text style={styles.vitalsLabelSmall}>Temperature</Text>
+                    <Text style={styles.vitalsValueSmall}>
+                      32
                       <Text style={{ fontSize: RF(14), fontWeight: "600" }}>
-                        {" "}
                         C
                       </Text>
                     </Text>
@@ -1156,6 +1157,18 @@ const styles = StyleSheet.create({
 
   vitalsValue: {
     fontSize: RF(28),
+    color: lightTheme.orange,
+    fontWeight: "800",
+  },
+
+  vitalsLabelSmall: {
+    marginBottom: RF(7),
+    fontSize: RF(10),
+    fontWeight: "800",
+  },
+
+  vitalsValueSmall: {
+    fontSize: RF(26),
     color: lightTheme.orange,
     fontWeight: "800",
   },
